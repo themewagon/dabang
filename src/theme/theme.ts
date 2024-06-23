@@ -2,9 +2,14 @@ import { createTheme } from '@mui/material';
 import palette from './palette';
 import typography from './typography';
 import CssBaseline from './components/CssBaseline';
+import AppBar from './components/AppBar';
 // import Link from './components/Link';
 // import Paper from './components/Paper';
-// import Button from './components/Button';
+import Button from './components/Button';
+import FilledInput from './components/FilledInput';
+import InputAdornment from './components/InputAdornment';
+import InputBase from './components/InputBase';
+import Badge from './components/Badge';
 // import ListItemButton from './components/ListItemButton';
 // import ListItemText from './components/ListItemText';
 // import ListItemIcon from './components/ListItemIcon';
@@ -13,20 +18,22 @@ export const theme = createTheme({
   palette,
   typography,
   components: {
-    // MuiAppBar: AppBar,
+    MuiAppBar: AppBar,
+    MuiBadge: Badge,
     // MuiPaper: Paper,
     // // MuiButtonBase: ButtonBase,
-    // MuiButton: Button,
+    MuiButton: Button,
     // MuiListItemButton: ListItemButton,
     // MuiListItemText: ListItemText,
     // MuiListItemIcon: ListItemIcon,
     // MuiIconButton: IconButton,
     // input fields
     // MuiTextField: TextField,
-    // MuiFilledInput: FilledInput,
+    MuiInputBase: InputBase,
+    MuiFilledInput: FilledInput,
+    MuiInputAdornment: InputAdornment,
     // MuiOutlinedInput: OutlinedInput,
     // MuiInputLabel: InputLabel,
-    // MuiInputAdornment: InputAdornment,
     // MuiFormHelperText: FormHelperText,
     // MuiInput: Input,
     // MuiFormControlLabel: FormControlLabel,

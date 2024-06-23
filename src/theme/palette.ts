@@ -1,5 +1,5 @@
 import { PaletteColorOptions, PaletteOptions } from '@mui/material/styles';
-import { indigo, grey } from './colors';
+import { indigo, grey, orange, red } from './colors';
 
 declare module '@mui/material/styles' {
   interface PaletteOptions {
@@ -36,7 +36,7 @@ const palette: PaletteOptions = {
   },
   neutral: {
     lighter: grey[100],
-    light: grey[700],
+    light: grey[300], // This is used
     main: grey[500],
     dark: grey[900],
     darker: grey[900],
@@ -56,21 +56,15 @@ const palette: PaletteOptions = {
   //   dark: purple[700],
   //   darker: purple[900],
   // },
-  // error: {
-  //   lighter: red[50],
-  //   light: red[300],
-  //   main: red[500],
-  //   dark: red[600],
-  //   darker: red[900],
-  // },
-  // warning: {
-  //   lighter: orange[50],
-  //   light: orange[400],
-  //   main: orange[500],
-  //   dark: orange[700],
-  //   darker: orange[900],
-  //   contrastText: '#ffffff',
-  // },
+  error: {
+    light: red[300],
+    main: red[500],
+  },
+  warning: {
+    lighter: orange[50],
+    light: orange[300],
+    main: orange[500],
+  },
   // success: {
   //   lighter: green[50],
   //   light: green[400],

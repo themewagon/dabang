@@ -10,6 +10,8 @@ import ElevationScroll from './ElevationScroll';
 import IconifyIcon from 'components/base/IconifyIcon';
 import AccountDropdown from './AccountDropdown';
 import LanguageDropdown from './LanguageDropdown';
+import Search from 'components/common/Search';
+import Notification from './Notification';
 
 interface TopbarProps {
   drawerWidth: number;
@@ -50,21 +52,20 @@ const Topbar = ({ drawerWidth, onHandleDrawerToggle }: TopbarProps) => {
               <IconifyIcon icon="mdi:hamburger-menu" />
             </IconButton>
 
-            {/* <IconButton color="inherit" aria-label="search-icon">
-              <Search fontSize="small" />
-            </IconButton> */}
+            <IconButton color="inherit" aria-label="search-icon">
+              <IconifyIcon icon="gravity-ui:magnifier" sx={{ color: 'primary.main' }} />
+            </IconButton>
           </Stack>
-          {/* <SearchBox /> */}
 
-          <Typography variant="h1">{title}</Typography>
+          <Typography variant="h1" color="primary.darker">
+            {title}
+          </Typography>
+
+          <Search />
 
           <Stack direction="row" alignItems="center" columnGap={{ xs: 1, sm: 2, md: 3 }}>
             <LanguageDropdown />
-            <IconButton aria-label="notifications" color="inherit">
-              {/* <OutlinedBadge badgeContent=" " color="error" variant="dot" overlap="circular">
-                <Notification />
-              </OutlinedBadge> */}
-            </IconButton>
+            <Notification />
             <AccountDropdown />
           </Stack>
         </Toolbar>

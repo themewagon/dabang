@@ -62,7 +62,7 @@ const LanguageDropdown = () => {
   };
 
   return (
-    <>
+    <div>
       <Button
         onClick={handleSelectedLanguage}
         aria-controls={open ? 'language-dropdown' : undefined}
@@ -99,7 +99,7 @@ const LanguageDropdown = () => {
           </MenuItem>
         ))}
       </Menu>
-    </>
+    </div>
   );
 };
 

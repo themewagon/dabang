@@ -37,7 +37,7 @@ const AccountDropdown = () => {
     setAnchorEl(null);
   };
   return (
-    <>
+    <div>
       <Button
         onClick={handleClick}
         aria-controls={open ? 'account-menu' : undefined}
@@ -80,7 +80,7 @@ const AccountDropdown = () => {
           </MenuItem>
         ))}
       </Menu>
-    </>
+    </div>
   );
 };
 

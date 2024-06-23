@@ -2,10 +2,17 @@ import { createTheme } from '@mui/material';
 import palette from './palette';
 import typography from './typography';
 import CssBaseline from './components/CssBaseline';
+import Link from './components/Link';
+import Paper from './components/Paper';
+import Button from './components/Button';
+import ListItemButton from './components/ListItemButton';
+import ListItemText from './components/ListItemText';
+import ListItemIcon from './components/ListItemIcon';
+import Stack from './components/Stack';
 import AppBar from './components/AppBar';
 // import Link from './components/Link';
 // import Paper from './components/Paper';
-import Button from './components/Button';
+
 import FilledInput from './components/FilledInput';
 import InputAdornment from './components/InputAdornment';
 import InputBase from './components/InputBase';
@@ -19,14 +26,15 @@ export const theme = createTheme({
   typography,
   components: {
     MuiAppBar: AppBar,
-    MuiBadge: Badge,
-    // MuiPaper: Paper,
-    // // MuiButtonBase: ButtonBase,
+    MuiPaper: Paper,
+    MuiStack: Stack,
+    // MuiButtonBase: ButtonBase,
     MuiButton: Button,
-    // MuiListItemButton: ListItemButton,
-    // MuiListItemText: ListItemText,
-    // MuiListItemIcon: ListItemIcon,
-    // MuiIconButton: IconButton,
+    MuiListItemButton: ListItemButton,
+    MuiListItemText: ListItemText,
+    MuiListItemIcon: ListItemIcon,
+    MuiBadge: Badge,
+
     // input fields
     // MuiTextField: TextField,
     MuiInputBase: InputBase,
@@ -38,7 +46,7 @@ export const theme = createTheme({
     // MuiInput: Input,
     // MuiFormControlLabel: FormControlLabel,
     MuiCssBaseline: CssBaseline,
-    // MuiLink: Link,
+    MuiLink: Link,
   },
 });
 

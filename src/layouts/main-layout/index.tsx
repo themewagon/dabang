@@ -1,11 +1,21 @@
 import { Typography } from '@mui/material';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useState } from 'react';
+import Topbar from './topbar/Topbar';
+
+const drawerWidth = 345;
 
 const MainLayout = ({ children }: PropsWithChildren) => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleDrawerToggle = () => {
+    if (!isClosing) {
+      setMobileOpen(!mobileOpen);
+    }
+  };
   return (
     <div>
-      <Typography variant="h1">Main Layout</Typography>
-
+      <Topbar drawerWidth={drawerWidth} onHandleDrawerToggle={handleDrawerToggle} />
       {children}
     </div>
   );

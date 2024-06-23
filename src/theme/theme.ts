@@ -2,24 +2,26 @@ import { createTheme } from '@mui/material';
 import palette from './palette';
 import typography from './typography';
 import CssBaseline from './components/CssBaseline';
-// import Link from './components/Link';
-// import Paper from './components/Paper';
-// import Button from './components/Button';
-// import ListItemButton from './components/ListItemButton';
-// import ListItemText from './components/ListItemText';
-// import ListItemIcon from './components/ListItemIcon';
+import Link from './components/Link';
+import Paper from './components/Paper';
+import Button from './components/Button';
+import ListItemButton from './components/ListItemButton';
+import ListItemText from './components/ListItemText';
+import ListItemIcon from './components/ListItemIcon';
+import Stack from './components/Stack';
 
 export const theme = createTheme({
   palette,
   typography,
   components: {
     // MuiAppBar: AppBar,
-    // MuiPaper: Paper,
-    // // MuiButtonBase: ButtonBase,
-    // MuiButton: Button,
-    // MuiListItemButton: ListItemButton,
-    // MuiListItemText: ListItemText,
-    // MuiListItemIcon: ListItemIcon,
+    MuiPaper: Paper,
+    MuiStack: Stack,
+    // MuiButtonBase: ButtonBase,
+    MuiButton: Button,
+    MuiListItemButton: ListItemButton,
+    MuiListItemText: ListItemText,
+    MuiListItemIcon: ListItemIcon,
     // MuiIconButton: IconButton,
     // input fields
     // MuiTextField: TextField,
@@ -31,7 +33,7 @@ export const theme = createTheme({
     // MuiInput: Input,
     // MuiFormControlLabel: FormControlLabel,
     MuiCssBaseline: CssBaseline,
-    // MuiLink: Link,
+    MuiLink: Link,
   },
 });
 

@@ -17,6 +17,7 @@ import Badge from './components/Badge';
 import Drawer from './components/Drawer';
 import Toolbar from './components/Toolbar';
 import MenuItem from './components/MenuItem';
+import shadows from './shadows';
 
 export const theme = createTheme({
   palette,
@@ -52,7 +53,7 @@ export const theme = createTheme({
   },
 });
 
-// // Add custom shadows to theme
-// shadows.forEach((shadow, index) => {
-//   theme.shadows[index + 1] = shadow;
-// });
+// Add custom shadows to theme
+shadows.forEach((shadow, index) => {
+  theme.shadows[index + 1] = shadow;
+});

@@ -85,7 +85,7 @@ const LanguageDropdown = () => {
       >
         <Stack direction="row" alignItems="center" columnGap={2}>
           <IconifyIcon icon={languages[selectedIndex].flag} fontSize={24} />
-          <Typography variant="h5" color="text.secondary" width={80}>
+          <Typography variant="h5" color="grey.600" width={80}>
             {languages[selectedIndex].lang}
           </Typography>
           <IconifyIcon icon="ph:caret-down-bold" fontSize={20} color="grey.400" />

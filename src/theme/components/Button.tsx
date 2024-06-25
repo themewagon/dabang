@@ -26,20 +26,22 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
     containedPrimary: {
       fontWeight: 600,
     },
-    // outlinedPrimary: ({ theme }) => ({
-    //   color: theme.palette.neutral.dark,
-    //   borderColor: theme.palette.grey.A400,
-    // }),
-    // startIcon: {
-    //   '& > *:first-of-type': {
-    //     fontSize: 20,
-    //   },
-    // },
-    // endIcon: {
-    //   '& > *:first-of-type': {
-    //     fontSize: 14,
-    //   },
-    // },
+
+    outlinedPrimary: ({ theme }) => ({
+      color: theme.palette.text.primary,
+      borderColor: theme.palette.neutral.dark,
+    }),
+
+    startIcon: {
+      '& > *:first-of-type': {
+        fontSize: 16,
+      },
+    },
+    endIcon: {
+      '& > *:first-of-type': {
+        fontSize: 14,
+      },
+    },
   },
 };
 

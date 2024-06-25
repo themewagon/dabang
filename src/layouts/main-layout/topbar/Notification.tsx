@@ -6,7 +6,7 @@ const Notification = () => {
     <Button
       aria-label="notifications"
       sx={{
-        bgcolor: 'warning.lighter',
+        bgcolor: 'warning.light',
         p: 1.5,
         minWidth: 'auto',
       }}
@@ -14,7 +14,7 @@ const Notification = () => {
       <Badge badgeContent=" " variant="dot">
         <IconifyIcon
           icon="clarity:notification-line"
-          sx={{ fontSize: 24, color: 'warning.light' }}
+          sx={{ fontSize: 24, color: 'warning.main' }}
         />
       </Badge>
     </Button>

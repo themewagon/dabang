@@ -1,5 +1,5 @@
 import { PaletteColorOptions, PaletteOptions } from '@mui/material/styles';
-import { indigo, grey, orange, red } from './colors';
+import { indigo, grey, orange, red, green, purple } from './colors';
 
 declare module '@mui/material/styles' {
   interface PaletteOptions {
@@ -21,9 +21,9 @@ declare module '@mui/material/styles' {
 const palette: PaletteOptions = {
   grey,
   text: {
-    primary: grey[800],
-    secondary: grey[600],
-    disabled: grey[400],
+    primary: indigo[600],
+    secondary: indigo[200],
+    // disabled: grey[400],
   },
 
   action: {
@@ -37,7 +37,7 @@ const palette: PaletteOptions = {
     lighter: grey[50], //used
     light: grey[300], // This is used
     main: grey[500],
-    dark: grey[900],
+    dark: grey[700],
     darker: grey[900],
     contrastText: '#fff',
   },
@@ -48,29 +48,30 @@ const palette: PaletteOptions = {
     dark: indigo[700],
     darker: indigo[900],
   },
-  // secondary: {
-  //   lighter: purple[50],
-  //   light: purple[300],
-  //   main: purple[500],
-  //   dark: purple[700],
-  //   darker: purple[900],
-  // },
+
+  secondary: {
+    lighter: purple[50],
+    main: purple[500],
+  },
+
   error: {
+    lighter: red[50],
     light: red[300],
     main: red[500],
+    dark: red[700],
   },
+
   warning: {
     lighter: orange[50],
     light: orange[300],
     main: orange[500],
+    dark: orange[700],
   },
-  // success: {
-  //   lighter: green[50],
-  //   light: green[400],
-  //   main: green[500],
-  //   dark: green[700],
-  //   darker: green[900],
-  // },
+
+  success: {
+    lighter: green[50],
+    main: green[500],
+  },
   // info: {
   //   lighter: lightBlue[50],
   //   light: lightBlue[300],

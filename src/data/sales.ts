@@ -2,7 +2,7 @@ import { SvgIconProps } from '@mui/material';
 import OrderIcon from 'components/icons/OrderIcon';
 import SalesIcon from 'components/icons/SalesIcon';
 
-interface SaleItem {
+export interface SaleItem {
   label: string;
   value: string;
   growth: string;

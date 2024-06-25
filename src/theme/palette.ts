@@ -27,7 +27,6 @@ const palette: PaletteOptions = {
   },
 
   action: {
-    active: indigo[500],
     hover: indigo[300],
     selected: indigo[500],
     // disabled: grey[400],
@@ -35,7 +34,7 @@ const palette: PaletteOptions = {
     // focus: grey[300],
   },
   neutral: {
-    lighter: grey[100],
+    lighter: grey[50], //used
     light: grey[300], // This is used
     main: grey[500],
     dark: grey[900],
@@ -43,7 +42,7 @@ const palette: PaletteOptions = {
     contrastText: '#fff',
   },
   primary: {
-    // lighter: blue[50],
+    lighter: indigo[50],
     light: indigo[300],
     main: indigo[500],
     dark: indigo[700],

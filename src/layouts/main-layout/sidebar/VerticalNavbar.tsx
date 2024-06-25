@@ -1,7 +1,6 @@
 import { Box, Drawer, DrawerProps } from '@mui/material';
 import { TransitionEventHandler } from 'react';
-import NavItems from './NavItems';
-import NavCard from './NavCard';
+import SidebarContent from './SidebarContent';
 
 interface VerticalNavbarProps extends DrawerProps {
   drawerWidth: number;
@@ -35,8 +34,7 @@ const VerticalNavbar = ({
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
         }}
       >
-        <NavItems />
-        <NavCard />
+        <SidebarContent />
       </Drawer>
 
       <Drawer
@@ -47,8 +45,7 @@ const VerticalNavbar = ({
         }}
         open
       >
-        <NavItems />
-        <NavCard />
+        <SidebarContent />
       </Drawer>
     </Box>
   );

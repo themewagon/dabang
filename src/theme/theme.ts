@@ -4,30 +4,34 @@ import typography from './typography';
 import CssBaseline from './components/CssBaseline';
 import Link from './components/Link';
 import Paper from './components/Paper';
+import Stack from './components/Stack';
+import AppBar from './components/AppBar';
 import Button from './components/Button';
 import ListItemButton from './components/ListItemButton';
 import ListItemText from './components/ListItemText';
 import ListItemIcon from './components/ListItemIcon';
-import Stack from './components/Stack';
-import AppBar from './components/AppBar';
-// import Link from './components/Link';
-// import Paper from './components/Paper';
-
 import FilledInput from './components/FilledInput';
 import InputAdornment from './components/InputAdornment';
 import InputBase from './components/InputBase';
 import Badge from './components/Badge';
-// import ListItemButton from './components/ListItemButton';
-// import ListItemText from './components/ListItemText';
-// import ListItemIcon from './components/ListItemIcon';
+import Drawer from './components/Drawer';
+import Toolbar from './components/Toolbar';
+import MenuItem from './components/MenuItem';
 
 export const theme = createTheme({
   palette,
   typography,
+  mixins: {
+    toolbar: {
+      minHeight: 120,
+    },
+  },
   components: {
     MuiAppBar: AppBar,
+    MuiToolbar: Toolbar,
     MuiPaper: Paper,
     MuiStack: Stack,
+    MuiDrawer: Drawer,
     // MuiButtonBase: ButtonBase,
     MuiButton: Button,
     MuiListItemButton: ListItemButton,
@@ -40,11 +44,9 @@ export const theme = createTheme({
     MuiInputBase: InputBase,
     MuiFilledInput: FilledInput,
     MuiInputAdornment: InputAdornment,
-    // MuiOutlinedInput: OutlinedInput,
-    // MuiInputLabel: InputLabel,
-    // MuiFormHelperText: FormHelperText,
-    // MuiInput: Input,
-    // MuiFormControlLabel: FormControlLabel,
+
+    MuiMenuItem: MenuItem,
+
     MuiCssBaseline: CssBaseline,
     MuiLink: Link,
   },

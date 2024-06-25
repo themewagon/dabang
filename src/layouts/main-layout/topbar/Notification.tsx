@@ -7,9 +7,8 @@ const Notification = () => {
       aria-label="notifications"
       sx={{
         bgcolor: 'warning.lighter',
-        borderRadius: 2,
-        width: 48,
-        height: 48,
+        p: 1.5,
+        minWidth: 'auto',
       }}
     >
       <Badge badgeContent=" " variant="dot">

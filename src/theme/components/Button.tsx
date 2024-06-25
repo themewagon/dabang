@@ -5,41 +5,36 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
     disableElevation: true,
   },
   styleOverrides: {
-    root: {
+    root: ({ theme }) => ({
       textTransform: 'none',
-      //   borderRadius: theme.shape.borderRadius * 2,
-      //   fontSize: theme.typography.fontSize, // 14px
-      //   padding: theme.spacing(1, 2),
-      //   lineHeight: 1.302,
+      borderRadius: theme.shape.borderRadius * 2,
+      fontSize: theme.typography.htmlFontSize, // 16px
+      padding: theme.spacing(1, 2), // 8px, 16px
+      lineHeight: 1.5,
+    }),
+
+    sizeSmall: ({ theme }) => ({
+      fontSize: theme.typography.fontSize, // 14px
+      padding: theme.spacing(0.75, 1.25), // 6px, 10px
+    }),
+
+    sizeLarge: ({ theme }) => ({
+      fontSize: theme.typography.fontSize + 4, // 18px
+      padding: theme.spacing(1.25, 2.75), // 10px, 22px
+    }),
+
+    containedPrimary: {
+      fontWeight: 600,
     },
-
-    // text: ({ theme }) => ({
-    //   color: theme.palette.grey[700],
-    // }),
-
-    // sizeSmall: ({ theme }) => ({
-    //   borderRadius: theme.shape.borderRadius * 6, // 24px
-    //   fontSize: theme.typography.fontSize / 1.4, // 10px
-    //   padding: theme.spacing(0.5, 1.5), // 4px, 12px
-    //   fontWeight: theme.typography.fontWeightBold,
-    // }),
-
-    // sizeLarge: ({ theme }) => ({
-    //   fontSize: theme.typography.htmlFontSize, // 16px
-    //   padding: theme.spacing(1.5, 2.5), // 12px, 20px
-    // }),
-
     // outlinedPrimary: ({ theme }) => ({
     //   color: theme.palette.neutral.dark,
     //   borderColor: theme.palette.grey.A400,
     // }),
-
     // startIcon: {
     //   '& > *:first-of-type': {
     //     fontSize: 20,
     //   },
     // },
-
     // endIcon: {
     //   '& > *:first-of-type': {
     //     fontSize: 14,

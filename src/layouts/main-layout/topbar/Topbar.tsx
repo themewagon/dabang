@@ -1,16 +1,14 @@
 import { AppBar, IconButton, Link, Stack, Toolbar, Typography } from '@mui/material';
-
 import { rootPaths } from 'routes/paths';
-
 import { useLocation } from 'react-router-dom';
-import sitemap from 'routes/sitemap';
 import { useMemo } from 'react';
+import sitemap from 'routes/sitemap';
 import Logo from 'components/icons/Logo';
-import ElevationScroll from './ElevationScroll';
 import IconifyIcon from 'components/base/IconifyIcon';
+import Search from 'components/common/Search';
+import ElevationScroll from './ElevationScroll';
 import AccountDropdown from './AccountDropdown';
 import LanguageDropdown from './LanguageDropdown';
-import Search from 'components/common/Search';
 import Notification from './Notification';
 
 interface TopbarProps {
@@ -21,9 +19,9 @@ interface TopbarProps {
 const Topbar = ({ drawerWidth, onHandleDrawerToggle }: TopbarProps) => {
   const location = useLocation();
 
-  const title = useMemo(() => {
-    const navItem = sitemap.find((item) => location.pathname === item.path);
-    return navItem?.name;
+  const pageTitle = useMemo(() => {
+    const navItem = sitemap.find((navItem) => location.pathname === navItem.path);
+    return navItem!.name;
   }, [location]);
 
   return (
@@ -36,34 +34,31 @@ const Topbar = ({ drawerWidth, onHandleDrawerToggle }: TopbarProps) => {
         }}
       >
         <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Stack
-            direction="row"
-            alignItems="center"
-            columnGap={{ xs: 1, sm: 2 }}
-            sx={{ display: { md: 'none' } }}
-          >
+          <Stack direction="row" alignItems="center" columnGap={2} sx={{ display: { md: 'none' } }}>
             <Link href={rootPaths.root}>
               <IconButton color="inherit" aria-label="logo">
-                <Logo />
+                <Logo sx={{ fontSize: 56 }} />
               </IconButton>
             </Link>
 
             <IconButton color="inherit" aria-label="open drawer" onClick={onHandleDrawerToggle}>
-              <IconifyIcon icon="mdi:hamburger-menu" />
+              <IconifyIcon icon="mdi:hamburger-menu" sx={{ fontSize: 32 }} />
             </IconButton>
 
-            <IconButton color="inherit" aria-label="search-icon">
-              <IconifyIcon icon="gravity-ui:magnifier" sx={{ color: 'primary.main' }} />
+            <IconButton aria-label="search-icon">
+              <IconifyIcon
+                icon="gravity-ui:magnifier"
+                sx={{ color: 'primary.main', fontSize: 32 }}
+              />
             </IconButton>
           </Stack>
 
-          <Typography variant="h1" color="primary.darker">
-            {title}
+          <Typography variant="h1" color="primary.darker" width={1 / 4}>
+            {pageTitle}
           </Typography>
 
-          <Search />
-
-          <Stack direction="row" alignItems="center" columnGap={{ xs: 1, sm: 2, md: 3 }}>
+          <Stack direction="row" alignItems="center" gap={5.25} flex={1}>
+            <Search />
             <LanguageDropdown />
             <Notification />
             <AccountDropdown />

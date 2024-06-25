@@ -1,5 +1,5 @@
 export const grey = {
-  50: '#F7FAFC',
+  50: '#F7FAFC', //used
   100: '#374557',
   200: '#374557',
   300: '#F9FAFB', // This is used
@@ -12,7 +12,8 @@ export const grey = {
 };
 
 export const indigo = {
-  300: '#737791',
+  50: '#737791',
+  300: '#3f51b5',
   500: '#5D5FEF',
   700: '#05004E',
   900: '#151D48',

@@ -8,18 +8,23 @@ const Search = () => {
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <IconifyIcon icon="gravity-ui:magnifier" sx={{ color: 'primary.main', fontSize: 24 }} />
+            <IconifyIcon
+              icon="gravity-ui:magnifier"
+              sx={{ color: 'primary.main', fontSize: 32, mr: 1 }}
+            />
           </InputAdornment>
         ),
       }}
       type="text"
       variant="filled"
       placeholder="Search here..."
-      //   fullWidth
-      //   hiddenLabel
+      hiddenLabel
+      fullWidth
       sx={{
         display: { xs: 'none', md: 'block' },
-        // maxWidth: 348,
+        minWidth: 300,
+        // width: '50%',
+        // mx: 3
       }}
     />
   );

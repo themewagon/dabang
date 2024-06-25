@@ -1,33 +1,40 @@
-import { Button, Stack, Typography } from '@mui/material';
 import Background from 'assets/Background.png';
 import LogoPro from 'components/icons/LogoPro';
+import { Card, CardContent, Typography, Button, Stack } from '@mui/material';
 
 const NavCard = () => {
   return (
-    <Stack
-      justifyContent="center"
-      alignItems="center"
-      rowGap={3.75}
+    <Card
       sx={{
-        backgroundImage: `url(${Background})`,
-        backgroundRepeat: 'no-repeat',
+        background: `url(${Background}) no-repeat`,
         width: 238,
-        height: 259,
-        mt: 17,
       }}
     >
-      <Stack rowGap={1} alignItems="center" color="common.white">
-        <LogoPro sx={{ fontSize: 48 }} />
-        <Typography variant="h4">Dabang Pro</Typography>
-        <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
-          Get access to all <br /> features on tetumbas
-        </Typography>
-      </Stack>
-
-      <Button variant="contained" sx={{ bgcolor: 'common.white', color: 'primary.main' }}>
-        Get Pro
-      </Button>
-    </Stack>
+      <CardContent sx={{ p: 3 }}>
+        <Stack gap={1} alignItems="center" color="common.white">
+          <LogoPro sx={{ fontSize: 48 }} />
+          <Typography variant="h4">Dabang Pro</Typography>
+          <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
+            Get access to all <br /> features on tetumbas
+          </Typography>
+          <Button
+            variant="contained"
+            sx={{
+              mt: 3.75,
+              width: 136,
+              color: 'primary.main',
+              bgcolor: 'background.default',
+              '&:hover': {
+                bgcolor: 'action.hover',
+                color: 'common.white',
+              },
+            }}
+          >
+            Get Pro
+          </Button>
+        </Stack>
+      </CardContent>
+    </Card>
   );
 };
 

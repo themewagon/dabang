@@ -61,6 +61,19 @@ const LanguageDropdown = () => {
     setAnchorEl(null);
   };
 
+  const languageMenuItems = languages?.map((language) => (
+    <MenuItem
+      key={language.id}
+      selected={language.id === selectedIndex}
+      onClick={() => handleMenuItemClick(language.id)}
+    >
+      <ListItemIcon>
+        <IconifyIcon icon={language.flag} />
+      </ListItemIcon>
+      <Typography variant="body1">{language.lang}</Typography>
+    </MenuItem>
+  ));
+
   return (
     <div>
       <Button
@@ -68,13 +81,14 @@ const LanguageDropdown = () => {
         aria-controls={open ? 'language-dropdown' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
+        sx={{ py: 2.0625 }}
       >
         <Stack direction="row" alignItems="center" columnGap={2}>
           <IconifyIcon icon={languages[selectedIndex].flag} fontSize={24} />
           <Typography variant="h5" color="text.secondary" width={80}>
             {languages[selectedIndex].lang}
           </Typography>
-          <IconifyIcon icon="ph:caret-down-bold" fontSize={16} color="grey.400" />
+          <IconifyIcon icon="ph:caret-down-bold" fontSize={20} color="grey.400" />
         </Stack>
       </Button>
 
@@ -86,18 +100,7 @@ const LanguageDropdown = () => {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        {languages?.map((language) => (
-          <MenuItem
-            key={language.id}
-            selected={language.id === selectedIndex}
-            onClick={() => handleMenuItemClick(language.id)}
-          >
-            <ListItemIcon>
-              <IconifyIcon icon={language.flag} />
-            </ListItemIcon>
-            <Typography variant="body1">{language.lang}</Typography>
-          </MenuItem>
-        ))}
+        {languageMenuItems}
       </Menu>
     </div>
   );

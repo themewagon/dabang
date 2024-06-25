@@ -30,12 +30,34 @@ const menuItems: MenuItem[] = [
 const AccountDropdown = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const accountMenuItems = menuItems.map((menuItem) => (
+    <MenuItem
+      key={menuItem.id}
+      onClick={handleClose}
+      sx={{
+        '&:hover .account-menu-icon': { color: 'common.white' },
+      }}
+    >
+      <ListItemIcon>
+        <IconifyIcon
+          icon={menuItem.icon}
+          sx={{ color: 'primary.main' }}
+          className="account-menu-icon"
+        />
+      </ListItemIcon>
+      <Typography variant="body1">{menuItem.label}</Typography>
+    </MenuItem>
+  ));
+
   return (
     <div>
       <Button
@@ -71,14 +93,7 @@ const AccountDropdown = () => {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        {menuItems.map((menuItem) => (
-          <MenuItem key={menuItem.id} onClick={handleClose}>
-            <ListItemIcon>
-              <IconifyIcon icon={menuItem.icon} />
-            </ListItemIcon>
-            <Typography variant="body1">{menuItem.label}</Typography>
-          </MenuItem>
-        ))}
+        {accountMenuItems}
       </Menu>
     </div>
   );

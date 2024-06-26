@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material';
 import Sales from 'components/sections/dashboard/Sales';
+import TotalRevenue from 'components/sections/dashboard/total-revenue/TotalRevenue';
 
 const Dashboard = () => {
   return (
@@ -11,8 +12,8 @@ const Dashboard = () => {
         Visior Insights
       </Grid>
 
-      <Grid item xs={12}>
-        Total Revenue
+      <Grid item xs={12} md={6}>
+        <TotalRevenue />
       </Grid>
       <Grid item xs={12}>
         Customer Satisfaction

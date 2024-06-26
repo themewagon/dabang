@@ -4,11 +4,12 @@ export const grey = {
   200: '#F8F9FA', // used
   300: '#F9FAFB', // This is used
   400: '#A098AE', // This is used
-  500: '#374557',
+  500: '#96A5B8', // used
   600: '#374557', // This is used
   700: '#C3D3E2', // used
   800: '#425166', // used
-  900: '#374557',
+  900: '#444A6D', // used
+  A100: '#EDF2F6',
 };
 
 export const indigo = {

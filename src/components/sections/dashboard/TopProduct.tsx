@@ -1,4 +1,4 @@
-import { Chip, LinearProgress, TableCell, TableRow } from '@mui/material';
+import { Chip, LinearProgress, TableCell, TableRow, alpha } from '@mui/material';
 import { Product } from 'data/top-products';
 
 const TopProduct = ({ product }: { product: Product }) => {
@@ -7,13 +7,19 @@ const TopProduct = ({ product }: { product: Product }) => {
   return (
     <TableRow>
       <TableCell>0{id}</TableCell>
-      <TableCell sx={{ whiteSpace: 'nowrap' }}>{name}</TableCell>
+      <TableCell>{name}</TableCell>
       <TableCell>
         <LinearProgress
           variant="determinate"
           value={product.sales}
-          //   sx={{ bgcolor: color, width: 140 }}
-          //   color="warning"
+          sx={{
+            bgcolor: alpha(color, 0.2),
+            borderRadius: 2,
+            width: 140,
+            '& .MuiLinearProgress-bar': {
+              bgcolor: color,
+            },
+          }}
         />
       </TableCell>
       <TableCell>

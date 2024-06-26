@@ -18,6 +18,7 @@ import Drawer from './components/Drawer';
 import Toolbar from './components/Toolbar';
 import MenuItem from './components/MenuItem';
 import shadows from './shadows';
+import TableCell from './components/TableCell';
 
 export const theme = createTheme({
   palette,
@@ -48,6 +49,7 @@ export const theme = createTheme({
 
     MuiMenuItem: MenuItem,
 
+    MuiTableCell: TableCell,
     MuiCssBaseline: CssBaseline,
     MuiLink: Link,
   },

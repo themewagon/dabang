@@ -9,7 +9,7 @@ const TopProducts = () => {
         Top Products
       </Typography>
 
-      <Table>
+      <Table aria-label="top product table">
         <TableHead>
           <TableRow>
             <TableCell>#</TableCell>

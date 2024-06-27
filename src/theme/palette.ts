@@ -41,6 +41,7 @@ const palette: PaletteOptions = {
     darker: grey[900],
     contrastText: '#fff',
   },
+
   primary: {
     lighter: indigo[50],
     light: indigo[300],

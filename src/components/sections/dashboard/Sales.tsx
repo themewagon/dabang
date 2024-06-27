@@ -22,7 +22,7 @@ const Sales = () => {
 
       <Grid container spacing={4}>
         {sales.map((item) => (
-          <SaleCard item={item} />
+          <SaleCard key={item.label} item={item} />
         ))}
       </Grid>
     </Paper>

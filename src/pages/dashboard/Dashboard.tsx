@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material';
 import Sales from 'components/sections/dashboard/Sales';
+import SalesMapping from 'components/sections/sales-mapping/SalesMapping';
 
 const Dashboard = () => {
   return (
@@ -24,8 +25,8 @@ const Dashboard = () => {
       <Grid item xs={12}>
         Top Products
       </Grid>
-      <Grid item xs={12}>
-        Sales mapping
+      <Grid item xs={12} md={4}>
+        <SalesMapping />
       </Grid>
       <Grid item xs={12}>
         Volume vs Service Level

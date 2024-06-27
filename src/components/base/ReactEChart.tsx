@@ -9,7 +9,7 @@ export interface ReactEchartProps extends BoxProps {
   option: EChartsReactProps['option'];
 }
 
-const ReactEChart = forwardRef<null | EChartsReactCore, ReactEchartProps>(
+const ReactEchart = forwardRef<null | EChartsReactCore, ReactEchartProps>(
   ({ option, ...rest }, ref) => {
     return (
       <Box
@@ -28,4 +28,4 @@ const ReactEChart = forwardRef<null | EChartsReactCore, ReactEchartProps>(
   },
 );
 
-export default ReactEChart;
+export default ReactEchart;

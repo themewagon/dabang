@@ -7,12 +7,13 @@ import {
 } from 'echarts/components';
 import { MapChart, MapSeriesOption } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
-import ReactEChart from 'components/base/ReactEChart';
+
 import { CallbackDataParams } from 'echarts/types/src/util/types.js';
 import { MutableRefObject, useEffect, useState } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { GeoJSONSourceInput } from 'echarts/types/src/coord/geo/geoTypes.js';
 import { SalesMappingDataItem } from 'data/sales-mapping-data';
+import ReactEchart from 'components/base/ReactEchart';
 
 echarts.use([TooltipComponent, GeoComponent, MapChart, CanvasRenderer]);
 
@@ -107,7 +108,7 @@ const SalesMappingChart = ({ salesMappingChartRef, data }: SalesMappingChartProp
   };
   echarts.registerMap('world', worldJson);
 
-  return <ReactEChart echarts={echarts} option={option} ref={salesMappingChartRef} />;
+  return <ReactEchart echarts={echarts} option={option} ref={salesMappingChartRef} />;
 };
 
 export default SalesMappingChart;

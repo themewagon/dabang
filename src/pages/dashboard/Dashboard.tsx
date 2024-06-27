@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material';
 import Sales from 'components/sections/dashboard/Sales';
-import SalesMapping from 'components/sections/sales-mapping/SalesMapping';
+import SalesMapping from 'components/sections/dashboard/sales-mapping/SalesMapping';
 
 const Dashboard = () => {
   return (

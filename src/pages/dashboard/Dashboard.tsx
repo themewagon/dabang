@@ -5,6 +5,7 @@ import TopProducts from 'components/sections/dashboard/TopProducts';
 import SalesMapping from 'components/sections/dashboard/sales-mapping/SalesMapping';
 import VisitorInsights from 'components/sections/dashboard/visitor-insights/VisitorInsights';
 import VolumeVsService from 'components/sections/dashboard/volume-vs-service/VolumeVsService';
+import CustomerSatisfaction from 'components/sections/dashboard/customer-satisfaction/CustomerSatisfaction';
 
 const Dashboard = () => {
   return (
@@ -19,8 +20,8 @@ const Dashboard = () => {
       <Grid item xs={12} md={6}>
         <TotalRevenue />
       </Grid>
-      <Grid item xs={12}>
-        Customer Satisfaction
+      <Grid item xs={12} md={3}>
+        <CustomerSatisfaction />
       </Grid>
       <Grid item xs={12}>
         Target Vs Reality

@@ -2,7 +2,7 @@ import { TypographyOptions } from '@mui/material/styles/createTypography';
 
 // lineHeight: lineHeight/fontSize;
 const typography: TypographyOptions = {
-  fontFamily: ['Poppins', 'Open Sans', 'sans-serif'].join(','),
+  fontFamily: ['Poppins', 'Open Sans', 'Epilogue', 'sans-serif'].join(','),
 
   // fontWeightLight: 300,
   // fontWeightRegular: 400,
@@ -74,6 +74,14 @@ const typography: TypographyOptions = {
     fontWeight: 500,
     fontSize: '0.75rem', // 12px
     lineHeight: 1.33, // 16px
+  },
+
+  button: {
+    textTransform: 'none',
+    fontFamily: 'Epilogue',
+    fontWeight: 500,
+    fontSize: '0.75rem', // 12px
+    lineHeight: 1.025, // 12.3px
   },
 };
 

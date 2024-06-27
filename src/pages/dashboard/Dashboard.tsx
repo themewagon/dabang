@@ -3,15 +3,16 @@ import Sales from 'components/sections/dashboard/Sales';
 import TotalRevenue from 'components/sections/dashboard/total-revenue/TotalRevenue';
 import TopProducts from 'components/sections/dashboard/TopProducts';
 import SalesMapping from 'components/sections/dashboard/sales-mapping/SalesMapping';
+import VisitorInsights from 'components/sections/dashboard/visitor-insights/VisitorInsights';
 
 const Dashboard = () => {
   return (
-    <Grid container rowGap={4}>
+    <Grid container gap={4}>
       <Grid item xs={12} md={8}>
         <Sales />
       </Grid>
-      <Grid item xs={12}>
-        Visior Insights
+      <Grid item xs={12} md>
+        <VisitorInsights />
       </Grid>
 
       <Grid item xs={12} md={6}>

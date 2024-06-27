@@ -13,7 +13,7 @@ import { MutableRefObject, useEffect, useState } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { GeoJSONSourceInput } from 'echarts/types/src/coord/geo/geoTypes.js';
 import { SalesMappingDataItem } from 'data/sales-mapping-data';
-import ReactEchart from 'components/base/ReactEchart';
+import ReactEchart from 'components/base/ReactEhart';
 
 echarts.use([TooltipComponent, GeoComponent, MapChart, CanvasRenderer]);
 

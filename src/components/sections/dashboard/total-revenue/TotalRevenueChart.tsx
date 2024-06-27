@@ -1,5 +1,6 @@
 import * as echarts from 'echarts/core';
-import ReactEchart from 'components/base/ReactEchart';
+import ReactEchart from 'components/base/ReactEhart';
+
 import {
   TooltipComponent,
   TooltipComponentOption,

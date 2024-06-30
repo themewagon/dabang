@@ -18,21 +18,21 @@ const salesData = [
     value: 12.122,
     color: '#FFA412',
     iconBgColor: '#FFF4DE',
-    icon: 'lets-icons:ticket-duotone-line',
+    icon: 'solar:ticker-star-outline',
     iconColor: '#FFA800',
   },
 ];
 
 const TargetVsReality = () => {
   return (
-    <Paper sx={{ p: 3 }}>
+    <Paper sx={{ pt: 3.125, px: 2.375, pb: 2.625 }}>
       <Typography variant="h4" color="primary.dark" mb={1.375}>
         Target vs Reality
       </Typography>
 
-      <TargetVsRealityChart />
+      <TargetVsRealityChart style={{ height: 151 }} />
 
-      <Stack mt={2.25} spacing={2}>
+      <Stack mt={2.25} spacing={1.875}>
         {salesData.map((item) => (
           <Stack key={item.label} direction="row" alignItems="center">
             <Stack
@@ -61,7 +61,11 @@ const TargetVsReality = () => {
             </div>
             <Typography
               variant="subtitle2"
-              sx={{ fontWeight: 'fontWeightMedium', color: item.color, ml: 9.125 }}
+              sx={{
+                fontWeight: 'fontWeightMedium',
+                color: item.color,
+                ml: { xs: 'auto', xl: 9.125 },
+              }}
             >
               {item.value}
             </Typography>

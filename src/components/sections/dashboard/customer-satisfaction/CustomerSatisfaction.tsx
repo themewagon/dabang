@@ -41,12 +41,12 @@ const CustomerSatisfaction = () => {
   );
 
   return (
-    <Paper sx={{ p: 3 }}>
+    <Paper sx={{ pt: 3.125, px: 1.375, pb: 2 }}>
       <Typography variant="h4" color="primary.dark" mb={3}>
         Customer Satisfaction
       </Typography>
 
-      <CustomerSatisfactionChart chartRef={chartRef} />
+      <CustomerSatisfactionChart chartRef={chartRef} style={{ height: 170 }} />
 
       <Stack
         direction="row"

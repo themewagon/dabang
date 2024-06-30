@@ -10,7 +10,6 @@ import { CanvasRenderer } from 'echarts/renderers';
 import { MutableRefObject, useMemo } from 'react';
 import ReactEchart from 'components/base/ReactEhart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import { SxProps } from '@mui/material';
 
 echarts.use([TooltipComponent, GridComponent, BarChart, CanvasRenderer]);
 
@@ -18,12 +17,15 @@ type EChartsOption = echarts.ComposeOption<
   TooltipComponentOption | GridComponentOption | BarSeriesOption
 >;
 
-interface ReactEChartProps {
+interface VolumeVsServiceChartProps {
   chartRef: MutableRefObject<EChartsReactCore | null>;
-  sx?: SxProps;
+  style?: {
+    height: number;
+    width?: number;
+  };
 }
 
-const VolumeVsServiceChart = ({ chartRef }: ReactEChartProps) => {
+const VolumeVsServiceChart = ({ chartRef, style }: VolumeVsServiceChartProps) => {
   const volumeVsServiceChartOption = useMemo(() => {
     const option: EChartsOption = {
       color: ['#00E096', '#0095FF'],
@@ -79,7 +81,14 @@ const VolumeVsServiceChart = ({ chartRef }: ReactEChartProps) => {
     return option;
   }, []);
 
-  return <ReactEchart echarts={echarts} option={volumeVsServiceChartOption} ref={chartRef} />;
+  return (
+    <ReactEchart
+      echarts={echarts}
+      option={volumeVsServiceChartOption}
+      ref={chartRef}
+      style={style}
+    />
+  );
 };
 
 export default VolumeVsServiceChart;

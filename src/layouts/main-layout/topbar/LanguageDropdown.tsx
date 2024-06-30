@@ -83,9 +83,9 @@ const LanguageDropdown = () => {
         aria-expanded={open ? 'true' : undefined}
         sx={{ py: 2.0625 }}
       >
-        <Stack direction="row" alignItems="center" columnGap={2}>
-          <IconifyIcon icon={languages[selectedIndex].flag} fontSize={24} />
-          <Typography variant="h5" color="grey.600" width={80}>
+        <IconifyIcon icon={languages[selectedIndex].flag} fontSize={24} />
+        <Stack direction="row" alignItems="center" sx={{ display: { xs: 'none', xl: 'flex' } }}>
+          <Typography variant="h5" color="grey.600" width={80} mx={2}>
             {languages[selectedIndex].lang}
           </Typography>
           <IconifyIcon icon="ph:caret-down-bold" fontSize={20} color="grey.400" />

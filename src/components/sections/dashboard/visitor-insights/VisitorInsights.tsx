@@ -12,14 +12,12 @@ const VisitorInsights = () => {
     'Unique Customers': false,
   });
 
-  const toggleClicked = (name: keyof typeof legend) => {
+  const handleLegendToggle = (name: keyof typeof legend) => {
     setLegend((prevState) => ({
       ...prevState,
       [name]: !prevState[name],
     }));
-  };
 
-  const handleLegendToggle = (name: keyof typeof legend) => {
     if (chartRef.current) {
       const instance = chartRef.current.getEchartsInstance();
       instance.dispatchAction({
@@ -33,10 +31,7 @@ const VisitorInsights = () => {
     <Button
       size="small"
       startIcon={<IconifyIcon icon="ic:round-square" sx={{ color }} />}
-      onClick={() => {
-        toggleClicked(name);
-        handleLegendToggle(name);
-      }}
+      onClick={() => handleLegendToggle(name)}
       sx={{ opacity: legend[name] ? 0.5 : 1 }}
       disableRipple
     >
@@ -48,11 +43,20 @@ const VisitorInsights = () => {
 
   return (
     <Paper sx={{ p: 3 }}>
-      <Typography variant="h4" color="primary.dark" mb={3}>
+      <Typography variant="h4" color="primary.dark" mb={4}>
         Visitor Insights
       </Typography>
-      <VisitorInsightsChart chartRef={chartRef} />
-      <Stack direction="row" justifyContent="center" alignItems="center" mt={3} px={3} gap={1}>
+
+      <VisitorInsightsChart chartRef={chartRef} style={{ height: 176 }} />
+
+      <Stack
+        direction={{ xs: 'column', sm: 'row' }}
+        justifyContent="center"
+        alignItems={{ xs: 'flex-start' }}
+        mt={4}
+        px={3}
+        gap={1}
+      >
         {renderToggleButton('Loyal Customers', '#A700FF')}
         {renderToggleButton('New Customers', '#EF4444')}
         {renderToggleButton('Unique Customers', '#3CD856')}

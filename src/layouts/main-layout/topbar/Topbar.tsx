@@ -29,12 +29,21 @@ const Topbar = ({ drawerWidth, onHandleDrawerToggle }: TopbarProps) => {
       <AppBar
         position="fixed"
         sx={{
-          width: { md: `calc(100% - ${drawerWidth + 1}px)` },
+          width: { lg: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Stack direction="row" alignItems="center" columnGap={2} sx={{ display: { md: 'none' } }}>
+        <Toolbar
+          sx={{
+            justifyContent: 'space-between',
+          }}
+        >
+          <Stack
+            direction="row"
+            alignItems="center"
+            columnGap={{ xs: 1, sm: 2, lg: 2 }}
+            sx={{ display: { lg: 'none' } }}
+          >
             <Link href={rootPaths.root}>
               <IconButton color="inherit" aria-label="logo">
                 <Logo sx={{ fontSize: 56 }} />
@@ -45,7 +54,7 @@ const Topbar = ({ drawerWidth, onHandleDrawerToggle }: TopbarProps) => {
               <IconifyIcon icon="mdi:hamburger-menu" sx={{ fontSize: 32 }} />
             </IconButton>
 
-            <IconButton aria-label="search-icon">
+            <IconButton aria-label="search-icon" sx={{ display: { md: 'none' } }}>
               <IconifyIcon
                 icon="gravity-ui:magnifier"
                 sx={{ color: 'primary.main', fontSize: 32 }}
@@ -53,12 +62,22 @@ const Topbar = ({ drawerWidth, onHandleDrawerToggle }: TopbarProps) => {
             </IconButton>
           </Stack>
 
-          <Typography variant="h1" color="primary.darker" width={1 / 4}>
+          <Typography
+            variant="h1"
+            color="primary.darker"
+            sx={{ display: { xs: 'none', xl: 'block' } }}
+          >
             {pageTitle}
           </Typography>
 
-          <Stack direction="row" alignItems="center" gap={5.25} flex={1}>
-            <Search />
+          <Search />
+
+          <Stack
+            direction="row"
+            justifyContent="flex-end"
+            alignItems="center"
+            spacing={{ xs: 1, sm: 2, xl: 5.25 }}
+          >
             <LanguageDropdown />
             <Notification />
             <AccountDropdown />

@@ -13,7 +13,6 @@ import { CanvasRenderer } from 'echarts/renderers';
 import { MutableRefObject, useMemo } from 'react';
 import ReactEchart from 'components/base/ReactEhart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import { SxProps } from '@mui/material';
 
 echarts.use([
   TooltipComponent,
@@ -28,12 +27,15 @@ type EChartsOption = echarts.ComposeOption<
   TooltipComponentOption | GridComponentOption | LegendComponentOption | LineSeriesOption
 >;
 
-interface ReactEChartProps {
+interface VisitorInsightsChartProps {
   chartRef: MutableRefObject<EChartsReactCore | null>;
-  sx?: SxProps;
+  style?: {
+    height: number;
+    width?: number;
+  };
 }
 
-const VisitorInsightsChart = ({ chartRef }: ReactEChartProps) => {
+const VisitorInsightsChart = ({ chartRef, style }: VisitorInsightsChartProps) => {
   const visitorInsightsChartOption = useMemo(() => {
     const option: EChartsOption = {
       color: ['#A700FF', '#EF4444', '#3CD856'],
@@ -121,7 +123,14 @@ const VisitorInsightsChart = ({ chartRef }: ReactEChartProps) => {
     return option;
   }, []);
 
-  return <ReactEchart echarts={echarts} option={visitorInsightsChartOption} ref={chartRef} />;
+  return (
+    <ReactEchart
+      echarts={echarts}
+      option={visitorInsightsChartOption}
+      ref={chartRef}
+      style={style}
+    />
+  );
 };
 
 export default VisitorInsightsChart;

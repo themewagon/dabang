@@ -22,9 +22,9 @@ const Search = () => {
       fullWidth
       sx={{
         display: { xs: 'none', md: 'block' },
-        minWidth: 300,
-        // width: '50%',
-        // mx: 3
+        ml: 20,
+        mr: 5.25,
+        // minWidth: 300,
       }}
     />
   );

@@ -37,10 +37,10 @@ const SaleCard = ({ item }: { item: SaleItem }) => {
           <Typography variant="h3" color="primary.darker" mb={1}>
             {value}
           </Typography>
-          <Typography variant="h6" color="grey.800" mb={1}>
+          <Typography variant="h6" color="grey.800" mb={1} whiteSpace="nowrap">
             {label}
           </Typography>
-          <Typography variant="caption" color="text.secondary">
+          <Typography variant="caption" color="text.secondary" whiteSpace="nowrap">
             {growth} from yesterday
           </Typography>
         </CardContent>

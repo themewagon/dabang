@@ -11,7 +11,6 @@ import { LineChart, LineSeriesOption } from 'echarts/charts';
 import { UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 import { MutableRefObject, useMemo } from 'react';
-import { SxProps } from '@mui/material';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import ReactEchart from 'components/base/ReactEhart';
 
@@ -28,12 +27,15 @@ type EChartsOption = echarts.ComposeOption<
   TooltipComponentOption | GridComponentOption | LegendComponentOption | LineSeriesOption
 >;
 
-interface ReactEChartProps {
+interface CustomerSatisfactionChart {
   chartRef: MutableRefObject<EChartsReactCore | null>;
-  sx?: SxProps;
+  style?: {
+    height?: number;
+    width?: number;
+  };
 }
 
-const CustomerSatisfactionChart = ({ chartRef }: ReactEChartProps) => {
+const CustomerSatisfactionChart = ({ chartRef, style }: CustomerSatisfactionChart) => {
   const customerSatisfactionChartOption = useMemo(() => {
     const option: EChartsOption = {
       tooltip: {
@@ -121,7 +123,14 @@ const CustomerSatisfactionChart = ({ chartRef }: ReactEChartProps) => {
     return option;
   }, []);
 
-  return <ReactEchart echarts={echarts} option={customerSatisfactionChartOption} ref={chartRef} />;
+  return (
+    <ReactEchart
+      echarts={echarts}
+      option={customerSatisfactionChartOption}
+      ref={chartRef}
+      style={style}
+    />
+  );
 };
 
 export default CustomerSatisfactionChart;

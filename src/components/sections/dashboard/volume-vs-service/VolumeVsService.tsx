@@ -46,7 +46,7 @@ const VolumeVsService = () => {
         Volume vs Service Level
       </Typography>
 
-      <VolumeVsServiceChart chartRef={chartRef} />
+      <VolumeVsServiceChart chartRef={chartRef} style={{ height: 175 }} />
 
       <Stack
         direction="row"

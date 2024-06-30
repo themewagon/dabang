@@ -6,6 +6,7 @@ import SalesMapping from 'components/sections/dashboard/sales-mapping/SalesMappi
 import VisitorInsights from 'components/sections/dashboard/visitor-insights/VisitorInsights';
 import VolumeVsService from 'components/sections/dashboard/volume-vs-service/VolumeVsService';
 import CustomerSatisfaction from 'components/sections/dashboard/customer-satisfaction/CustomerSatisfaction';
+import TargetVsReality from 'components/sections/dashboard/target-vs-reality/TargetVsReality';
 
 const Dashboard = () => {
   return (
@@ -23,8 +24,8 @@ const Dashboard = () => {
       <Grid item xs={12} md={3}>
         <CustomerSatisfaction />
       </Grid>
-      <Grid item xs={12}>
-        Target Vs Reality
+      <Grid item xs={12} md={3}>
+        <TargetVsReality />
       </Grid>
 
       <Grid item xs={12} md={6}>

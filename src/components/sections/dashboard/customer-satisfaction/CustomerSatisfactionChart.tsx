@@ -38,8 +38,10 @@ interface CustomerSatisfactionChart {
 const CustomerSatisfactionChart = ({ chartRef, style }: CustomerSatisfactionChart) => {
   const customerSatisfactionChartOption = useMemo(() => {
     const option: EChartsOption = {
+      color: ['#0095FF', '#07E098'],
       tooltip: {
-        trigger: 'axis',
+        // trigger: 'axis',
+        show: false,
       },
 
       legend: {
@@ -48,8 +50,9 @@ const CustomerSatisfactionChart = ({ chartRef, style }: CustomerSatisfactionChar
 
       grid: {
         top: 0,
-        left: '-8%',
-        right: '2%',
+        // left: '-8%',
+        left: 0,
+        right: 4,
         bottom: 0,
         containLabel: true,
       },

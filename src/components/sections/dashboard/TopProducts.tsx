@@ -4,12 +4,12 @@ import TopProduct from './TopProduct';
 
 const TopProducts = () => {
   return (
-    <Paper sx={{ py: 3, overflow: 'auto' }}>
-      <Typography variant="h4" color="primary.dark" pl={3}>
+    <Paper sx={{ pt: 2.875, overflow: 'auto' }}>
+      <Typography variant="h4" color="primary.dark" pl={3.25} mb={1.75}>
         Top Products
       </Typography>
 
-      <Table aria-label="top product table" sx={{ width: 1 }}>
+      <Table aria-label="top products table" sx={{ width: 1 }}>
         <TableHead>
           <TableRow>
             <TableCell>#</TableCell>

@@ -7,7 +7,7 @@ const TopProduct = ({ product }: { product: Product }) => {
   return (
     <TableRow>
       <TableCell>0{id}</TableCell>
-      <TableCell>{name}</TableCell>
+      <TableCell size="small">{name}</TableCell>
       <TableCell>
         <LinearProgress
           variant="determinate"
@@ -15,7 +15,7 @@ const TopProduct = ({ product }: { product: Product }) => {
           sx={{
             bgcolor: alpha(color, 0.2),
             borderRadius: 2,
-            width: 140,
+            width: 180,
             '& .MuiLinearProgress-bar': {
               bgcolor: color,
             },

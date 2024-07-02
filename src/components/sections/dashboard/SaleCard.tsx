@@ -12,7 +12,7 @@ const SaleCard = ({ item }: { item: SaleItem }) => {
   ) : null;
 
   return (
-    <Grid item xs={12} sm key={label}>
+    <Grid item xs={12} sm={6} md key={label}>
       <Card
         sx={{
           borderRadius: 4,

@@ -34,7 +34,7 @@ const TargetVsRealityChart = ({ style }: TargetVsRealityChartProps) => {
 
       xAxis: {
         data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July'],
-        // boundaryGap: false,
+        boundaryGap: true,
         axisTick: {
           show: false,
         },
@@ -51,13 +51,15 @@ const TargetVsRealityChart = ({ style }: TargetVsRealityChartProps) => {
 
       yAxis: {
         show: false,
+        type: 'value',
       },
 
       grid: {
         top: 0,
         bottom: 0,
-        left: '-5%',
-        right: '-2%',
+        // left: '-7%',
+        left: 0,
+        right: '-1%',
         containLabel: true,
       },
 

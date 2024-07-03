@@ -76,7 +76,12 @@ const AccountDropdown = () => {
         aria-expanded={open ? 'true' : undefined}
       >
         <Avatar
-          sx={{ width: 60, height: 60, borderRadius: 4, mr: { xl: 2.5 } }}
+          sx={{
+            width: { xs: 50, sm: 60 },
+            height: { xs: 50, sm: 60 },
+            borderRadius: 4,
+            mr: { xl: 2.5 },
+          }}
           alt="User Profile"
           src={Profile}
         />

@@ -26,7 +26,7 @@ const LegendToggleButton = ({
         sx={{ opacity: legend[name] ? 0.5 : 1 }}
         disableRipple
       >
-        <Typography variant="button" color="#464E5F" whiteSpace="nowrap" alignSelf="center">
+        <Typography variant="button" color="#464E5F" whiteSpace="nowrap" alignSelf="end">
           {name}
         </Typography>
       </Button>

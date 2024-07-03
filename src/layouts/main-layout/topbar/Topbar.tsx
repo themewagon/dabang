@@ -41,7 +41,7 @@ const Topbar = ({ drawerWidth, onHandleDrawerToggle }: TopbarProps) => {
           <Stack
             direction="row"
             alignItems="center"
-            columnGap={{ xs: 1, sm: 2, lg: 2 }}
+            columnGap={{ xs: 1, sm: 2 }}
             sx={{ display: { lg: 'none' } }}
           >
             <Link href={rootPaths.root}>
@@ -51,13 +51,13 @@ const Topbar = ({ drawerWidth, onHandleDrawerToggle }: TopbarProps) => {
             </Link>
 
             <IconButton color="inherit" aria-label="open drawer" onClick={onHandleDrawerToggle}>
-              <IconifyIcon icon="mdi:hamburger-menu" sx={{ fontSize: 32 }} />
+              <IconifyIcon icon="mdi:hamburger-menu" sx={{ fontSize: { xs: 24, sm: 32 } }} />
             </IconButton>
 
             <IconButton aria-label="search-icon" sx={{ display: { md: 'none' } }}>
               <IconifyIcon
                 icon="gravity-ui:magnifier"
-                sx={{ color: 'primary.main', fontSize: 32 }}
+                sx={{ color: 'primary.main', fontSize: { xs: 24, sm: 32 } }}
               />
             </IconButton>
           </Stack>

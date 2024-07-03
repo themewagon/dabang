@@ -23,7 +23,7 @@ const TotalRevenueLegendToggleButton = ({
       sx={{ opacity: legend[name] ? 0.5 : 1 }}
       disableRipple
     >
-      <Typography variant="button" color="#464E5F" whiteSpace="nowrap" alignSelf="center">
+      <Typography variant="button" color="#464E5F" whiteSpace="nowrap" alignSelf="end">
         {name}
       </Typography>
     </Button>
@@ -53,12 +53,12 @@ const TotalRevenue = () => {
   };
 
   return (
-    <Paper sx={{ pt: 3.25, px: 3.5, pb: 3.5 }}>
-      <Typography variant="h4" mb={3.125}>
+    <Paper sx={{ pt: 3.125, px: 3.5, pb: 3.5 }}>
+      <Typography variant="h4" mb={3}>
         Total Revenue
       </Typography>
 
-      <TotalRevenueChart chartRef={chartRef} style={{ height: 200 }} />
+      <TotalRevenueChart chartRef={chartRef} style={{ height: 190 }} />
 
       <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="center" gap={1} mt={3} px={3}>
         <TotalRevenueLegendToggleButton

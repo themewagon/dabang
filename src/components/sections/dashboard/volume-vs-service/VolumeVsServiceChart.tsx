@@ -18,12 +18,16 @@ type EChartsOption = echarts.ComposeOption<
   TooltipComponentOption | GridComponentOption | BarSeriesOption
 >;
 
-interface ReactEChartProps {
+interface VolumeVsServiceChartProps {
   chartRef: MutableRefObject<EChartsReactCore | null>;
-  sx?: SxProps;
+  style?: {
+    height: number;
+    width?: number;
+  };
+  sx: SxProps;
 }
 
-const VolumeVsServiceChart = ({ chartRef }: ReactEChartProps) => {
+const VolumeVsServiceChart = ({ chartRef, style, ...rest }: VolumeVsServiceChartProps) => {
   const volumeVsServiceChartOption = useMemo(() => {
     const option: EChartsOption = {
       color: ['#00E096', '#0095FF'],
@@ -79,7 +83,15 @@ const VolumeVsServiceChart = ({ chartRef }: ReactEChartProps) => {
     return option;
   }, []);
 
-  return <ReactEchart echarts={echarts} option={volumeVsServiceChartOption} ref={chartRef} />;
+  return (
+    <ReactEchart
+      echarts={echarts}
+      option={volumeVsServiceChartOption}
+      ref={chartRef}
+      style={style}
+      {...rest}
+    />
+  );
 };
 
 export default VolumeVsServiceChart;

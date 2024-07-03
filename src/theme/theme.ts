@@ -19,6 +19,7 @@ import Toolbar from './components/Toolbar';
 import MenuItem from './components/MenuItem';
 import shadows from './shadows';
 import TableCell from './components/TableCell';
+import Chip from './components/Chip';
 
 export const theme = createTheme({
   palette,
@@ -52,6 +53,7 @@ export const theme = createTheme({
     MuiTableCell: TableCell,
     MuiCssBaseline: CssBaseline,
     MuiLink: Link,
+    MuiChip: Chip,
   },
 });
 

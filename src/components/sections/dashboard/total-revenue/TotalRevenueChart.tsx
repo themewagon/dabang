@@ -11,14 +11,23 @@ import {
 } from 'echarts/components';
 import { BarChart, BarSeriesOption } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
-import { useMemo } from 'react';
+import { MutableRefObject, useMemo } from 'react';
+import EChartsReactCore from 'echarts-for-react/lib/core';
 
 echarts.use([TooltipComponent, GridComponent, LegendComponent, BarChart, CanvasRenderer]);
 type EChartsOption = echarts.ComposeOption<
   TooltipComponentOption | GridComponentOption | LegendComponentOption | BarSeriesOption
 >;
 
-const TotalRevenueChart = () => {
+interface TotalRevenueChartProps {
+  chartRef: MutableRefObject<EChartsReactCore | null>;
+  style?: {
+    height: number;
+    width?: number;
+  };
+}
+
+const TotalRevenueChart = ({ chartRef, style }: TotalRevenueChartProps) => {
   const option: EChartsOption = useMemo(() => {
     return {
       color: ['#0095FF', '#00E096'],
@@ -28,14 +37,7 @@ const TotalRevenueChart = () => {
       },
 
       legend: {
-        data: ['Online Sales', 'Offline Sales'],
-        bottom: 0,
-        icon: 'circle',
-        textStyle: {
-          fontFamily: 'Open Sans',
-          fontWeight: 'normal',
-        },
-        itemGap: 40,
+        show: false,
       },
 
       xAxis: {
@@ -72,10 +74,10 @@ const TotalRevenueChart = () => {
       },
 
       grid: {
-        top: '3%',
+        top: '4%',
         left: 0,
         right: 0,
-        bottom: '18%',
+        bottom: 0,
         containLabel: true,
       },
 
@@ -102,7 +104,7 @@ const TotalRevenueChart = () => {
     };
   }, []);
 
-  return <ReactEchart echarts={echarts} option={option} style={{ height: 240 }} />;
+  return <ReactEchart echarts={echarts} option={option} ref={chartRef} style={style} />;
 };
 
 export default TotalRevenueChart;

@@ -12,7 +12,7 @@ const SaleCard = ({ item }: { item: SaleItem }) => {
   ) : null;
 
   return (
-    <Grid item xs={12} sm key={label}>
+    <Grid item xs={12} sm={6} md key={label}>
       <Card
         sx={{
           borderRadius: 4,
@@ -37,10 +37,10 @@ const SaleCard = ({ item }: { item: SaleItem }) => {
           <Typography variant="h3" color="primary.darker" mb={1}>
             {value}
           </Typography>
-          <Typography variant="h6" color="grey.800" mb={1}>
+          <Typography variant="h6" color="grey.800" mb={1} whiteSpace="nowrap">
             {label}
           </Typography>
-          <Typography variant="caption" color="text.secondary">
+          <Typography variant="caption" color="text.secondary" whiteSpace="nowrap">
             {growth} from yesterday
           </Typography>
         </CardContent>

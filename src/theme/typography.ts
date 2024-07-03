@@ -66,7 +66,7 @@ const typography: TypographyOptions = {
   body2: {
     fontWeight: 400,
     fontSize: '0.8125rem', // 13px
-    lineHeight: 1.23, // 16px
+    lineHeight: 1.2307, // 16px
     fontFamily: 'Open Sans',
   },
 

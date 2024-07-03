@@ -1,4 +1,13 @@
-import { Avatar, Button, ListItemIcon, Menu, MenuItem, Stack, Typography } from '@mui/material';
+import {
+  Avatar,
+  Box,
+  Button,
+  ListItemIcon,
+  Menu,
+  MenuItem,
+  Stack,
+  Typography,
+} from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import { MouseEvent, useState } from 'react';
 import Profile from 'assets/Profile.svg';
@@ -59,7 +68,7 @@ const AccountDropdown = () => {
   ));
 
   return (
-    <div>
+    <>
       <Button
         onClick={handleClick}
         aria-controls={open ? 'account-menu' : undefined}
@@ -67,21 +76,26 @@ const AccountDropdown = () => {
         aria-expanded={open ? 'true' : undefined}
       >
         <Avatar
-          sx={{ width: 60, height: 60, borderRadius: 4, mr: 2.5 }}
+          sx={{
+            width: { xs: 50, sm: 60 },
+            height: { xs: 50, sm: 60 },
+            borderRadius: 4,
+            mr: { xl: 2.5 },
+          }}
           alt="User Profile"
           src={Profile}
         />
-        <div>
-          <Stack direction="row" alignItems="center" columnGap={7}>
-            <Typography variant="h6" component="p" color="primary.darker">
+        <Box sx={{ display: { xs: 'none', xl: 'block' } }}>
+          <Stack direction="row" alignItems="center" columnGap={6}>
+            <Typography variant="h6" component="p" color="primary.darker" gutterBottom>
               Musfiq
             </Typography>
             <IconifyIcon icon="ph:caret-down-bold" fontSize={16} color="primary.darker" />
           </Stack>
-          <Typography variant="subtitle2" textAlign="left" color="primary.light" mt={0.5}>
+          <Typography variant="subtitle2" textAlign="left" color="primary.light">
             Admin
           </Typography>
-        </div>
+        </Box>
       </Button>
 
       <Menu
@@ -95,7 +109,7 @@ const AccountDropdown = () => {
       >
         {accountMenuItems}
       </Menu>
-    </div>
+    </>
   );
 };
 

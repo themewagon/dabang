@@ -16,11 +16,14 @@ type EChartsOption = echarts.ComposeOption<
   TooltipComponentOption | GridComponentOption | BarSeriesOption
 >;
 
-// interface ReactEChartProps {
-//   sx?: SxProps;
-// }
+interface TargetVsRealityChartProps {
+  style?: {
+    height?: number;
+    width?: number;
+  };
+}
 
-const TargetVsRealityChart = () => {
+const TargetVsRealityChart = ({ style }: TargetVsRealityChartProps) => {
   const targetVsRealityChartOption = useMemo(() => {
     const option: EChartsOption = {
       color: ['#4AB58E', '#FFCF00'],
@@ -31,7 +34,7 @@ const TargetVsRealityChart = () => {
 
       xAxis: {
         data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July'],
-        // boundaryGap: false,
+        boundaryGap: true,
         axisTick: {
           show: false,
         },
@@ -48,13 +51,15 @@ const TargetVsRealityChart = () => {
 
       yAxis: {
         show: false,
+        type: 'value',
       },
 
       grid: {
         top: 0,
         bottom: 0,
-        left: '-10%',
-        right: '9%',
+        // left: '-7%',
+        left: 0,
+        right: '-1%',
         containLabel: true,
       },
 
@@ -80,13 +85,7 @@ const TargetVsRealityChart = () => {
     return option;
   }, []);
 
-  return (
-    <ReactEchart
-      echarts={echarts}
-      option={targetVsRealityChartOption}
-      style={{ width: 334, height: 157 }}
-    />
-  );
+  return <ReactEchart echarts={echarts} option={targetVsRealityChartOption} style={style} />;
 };
 
 export default TargetVsRealityChart;

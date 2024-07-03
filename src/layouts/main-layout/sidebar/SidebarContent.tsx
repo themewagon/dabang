@@ -29,7 +29,7 @@ const SidebarContent = () => {
 
       <Box
         sx={(theme) => ({
-          px: 6,
+          px: 5,
           height: `calc(100vh - ${theme.mixins.toolbar.minHeight}px)`,
           overflowY: 'auto',
         })}

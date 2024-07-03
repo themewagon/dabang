@@ -2,21 +2,18 @@ import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
 
 const TableCell: Components<Omit<Theme, 'components'>>['MuiTableCell'] = {
-  defaultProps: {},
   styleOverrides: {
     root: ({ theme }) => ({
-      //   paddingTop: theme.spacing(2),
-      //   paddingBottom: theme.spacing(2),
-      //   borderBottom: theme.shape.borderRadius * 0.5,
       borderBottomColor: theme.palette.grey.A100,
     }),
 
     head: ({ theme }) => ({
+      fontFamily: theme.typography.body2.fontFamily,
       fontWeight: theme.typography.body2.fontWeight,
       fontSize: theme.typography.body2.fontSize,
       lineHeight: theme.typography.body2.lineHeight,
-      fontFamily: theme.typography.body2.fontFamily,
       color: theme.palette.neutral.main,
+      padding: theme.spacing(1.375, 3.25),
     }),
 
     body: ({ theme }) => ({
@@ -24,6 +21,7 @@ const TableCell: Components<Omit<Theme, 'components'>>['MuiTableCell'] = {
       fontWeight: theme.typography.subtitle2.fontWeight,
       lineHeight: theme.typography.subtitle2.lineHeight,
       color: theme.palette.neutral.darker,
+      padding: theme.spacing(2.25, 3.25),
     }),
   },
 };

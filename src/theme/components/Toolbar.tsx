@@ -7,12 +7,12 @@ const Toolbar: Components<Omit<Theme, 'components'>>['MuiToolbar'] = {
     //   padding: theme.spacing(0, 3),
     // }),
     gutters: ({ theme }) => ({
-      padding: theme.spacing(0, 6),
+      padding: theme.spacing(0, 5),
       // [theme.breakpoints.up('sm')]: {
       //   padding: theme.spacing(0, 2),
       // },
       [theme.breakpoints.up('sm')]: {
-        padding: theme.spacing(0, 6),
+        padding: theme.spacing(0, 5),
       },
     }),
   },

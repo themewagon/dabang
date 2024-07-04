@@ -2,11 +2,11 @@ import { useRef } from 'react';
 import { Paper, Typography } from '@mui/material';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import SalesMappingChart from './SalesMappingChart';
-import { salesMappingData } from 'data/sales-mapping-data';
+import { getSalesMappingData } from 'data/sales-mapping-data';
 
 const SalesMapping = () => {
   const salesMappingChartRef = useRef<null | EChartsReactCore>(null);
-  // const [salesMappingData] = useState([]);
+  const salesMappingData = getSalesMappingData();
 
   return (
     <Paper sx={{ py: 3, px: 3 }}>

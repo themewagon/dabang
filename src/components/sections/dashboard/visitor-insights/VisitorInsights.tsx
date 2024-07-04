@@ -1,39 +1,13 @@
-import { Button, Paper, Stack, Typography } from '@mui/material';
+import { Paper, Stack, Typography } from '@mui/material';
 import VisitorInsightsChart from './VisitorInsightsChart';
 import { useRef, useState } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import IconifyIcon from 'components/base/IconifyIcon';
-
-const VisitorInsightsLegendToggleButton = ({
-  name,
-  color,
-  legend,
-  handleLegendToggle,
-}: {
-  name: keyof typeof legend;
-  color: string;
-  legend: { [key: string]: boolean };
-  handleLegendToggle: (name: keyof typeof legend) => void;
-}) => {
-  return (
-    <Stack>
-      <Button
-        size="small"
-        startIcon={<IconifyIcon icon="ic:round-square" sx={{ color }} />}
-        onClick={() => handleLegendToggle(name)}
-        sx={{ opacity: legend[name] ? 0.5 : 1 }}
-        disableRipple
-      >
-        <Typography variant="button" color="#464E5F" whiteSpace="nowrap" alignSelf="end">
-          {name}
-        </Typography>
-      </Button>
-    </Stack>
-  );
-};
+import { visitorInsightsData } from 'data/visitor-insights-data';
+import LegendToggleButton from 'components/common/LegendToggleButton';
 
 const VisitorInsights = () => {
   const chartRef = useRef<EChartsReactCore | null>(null);
+
   const [legend, setLegend] = useState({
     'Loyal Customers': false,
     'New Customers': false,
@@ -61,33 +35,43 @@ const VisitorInsights = () => {
         Visitor Insights
       </Typography>
 
-      <VisitorInsightsChart chartRef={chartRef} style={{ height: 176 }} />
+      <VisitorInsightsChart
+        chartRef={chartRef}
+        data={visitorInsightsData}
+        style={{ height: 176 }}
+      />
 
       <Stack
         direction={{ xs: 'column', sm: 'row' }}
         justifyContent="center"
-        alignItems={{ xs: 'flex-start' }}
+        alignItems="flex-start"
+        // alignItems={{ xs: 'flex-start' }}
         mt={4}
         px={3}
-        gap={1}
+        spacing={1}
       >
-        <VisitorInsightsLegendToggleButton
+        <LegendToggleButton
           name="Loyal Customers"
-          color="#A700FF"
+          icon="ic:round-square"
+          color="secondary.darker"
           legend={legend}
-          handleLegendToggle={handleLegendToggle}
+          onHandleLegendToggle={handleLegendToggle}
         />
-        <VisitorInsightsLegendToggleButton
+
+        <LegendToggleButton
           name="New Customers"
-          color="#EF4444"
+          icon="ic:round-square"
+          color="error.darker"
           legend={legend}
-          handleLegendToggle={handleLegendToggle}
+          onHandleLegendToggle={handleLegendToggle}
         />
-        <VisitorInsightsLegendToggleButton
+
+        <LegendToggleButton
           name="Unique Customers"
-          color="#3CD856"
+          icon="ic:round-square"
+          color="success.darker"
           legend={legend}
-          handleLegendToggle={handleLegendToggle}
+          onHandleLegendToggle={handleLegendToggle}
         />
       </Stack>
     </Paper>

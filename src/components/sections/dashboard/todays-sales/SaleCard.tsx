@@ -19,7 +19,7 @@ const SaleCard = ({ item }: { item: SaleItem }) => {
           bgcolor: bgColor,
         }}
       >
-        <CardContent>
+        <CardContent sx={(theme) => ({ p: `${theme.spacing(2.5)} !important` })}>
           <Stack
             sx={{
               width: 40,
@@ -37,10 +37,10 @@ const SaleCard = ({ item }: { item: SaleItem }) => {
           <Typography variant="h3" color="primary.darker" mb={1}>
             {value}
           </Typography>
-          <Typography variant="h6" color="grey.800" mb={1} whiteSpace="nowrap">
+          <Typography variant="h6" color="grey.800" whiteSpace="nowrap" component="p" mb={1}>
             {label}
           </Typography>
-          <Typography variant="caption" color="text.secondary" whiteSpace="nowrap">
+          <Typography variant="caption" color="text.secondary" whiteSpace="nowrap" component="p">
             {growth} from yesterday
           </Typography>
         </CardContent>

@@ -9,6 +9,7 @@ import { BarChart, BarSeriesOption } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
 import ReactEchart from 'components/base/ReactEhart';
 import { useMemo } from 'react';
+import { useTheme } from '@mui/material';
 
 echarts.use([TooltipComponent, GridComponent, BarChart, CanvasRenderer]);
 
@@ -17,16 +18,22 @@ type EChartsOption = echarts.ComposeOption<
 >;
 
 interface TargetVsRealityChartProps {
+  data: {
+    reality: number[];
+    target: number[];
+  };
   style?: {
     height?: number;
     width?: number;
   };
 }
 
-const TargetVsRealityChart = ({ style }: TargetVsRealityChartProps) => {
+const TargetVsRealityChart = ({ style, data }: TargetVsRealityChartProps) => {
+  const theme = useTheme();
+
   const targetVsRealityChartOption = useMemo(() => {
     const option: EChartsOption = {
-      color: ['#4AB58E', '#FFCF00'],
+      color: [theme.palette.success.light, theme.palette.yellow.main],
 
       tooltip: {
         confine: true,
@@ -42,10 +49,8 @@ const TargetVsRealityChart = ({ style }: TargetVsRealityChartProps) => {
           show: false,
         },
         axisLabel: {
-          fontFamily: 'Poppins',
-          // fontWeight:'normal',
-          fontSize: 10,
-          color: '#7B91B0',
+          fontSize: theme.typography.fontSize - 4,
+          color: theme.palette.grey.A200,
         },
       },
 
@@ -66,7 +71,7 @@ const TargetVsRealityChart = ({ style }: TargetVsRealityChartProps) => {
       series: [
         {
           type: 'bar',
-          data: [78, 68, 58, 78, 95, 95, 95],
+          data: data.reality,
           itemStyle: {
             borderRadius: 5,
           },
@@ -74,7 +79,7 @@ const TargetVsRealityChart = ({ style }: TargetVsRealityChartProps) => {
         },
         {
           type: 'bar',
-          data: [102, 92, 116, 92, 133, 133, 133],
+          data: data.target,
           itemStyle: {
             borderRadius: 5,
           },
@@ -83,7 +88,7 @@ const TargetVsRealityChart = ({ style }: TargetVsRealityChartProps) => {
       ],
     };
     return option;
-  }, []);
+  }, [theme, data]);
 
   return <ReactEchart echarts={echarts} option={targetVsRealityChartOption} style={style} />;
 };

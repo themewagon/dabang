@@ -10,7 +10,7 @@ import { CanvasRenderer } from 'echarts/renderers';
 import { MutableRefObject, useMemo } from 'react';
 import ReactEchart from 'components/base/ReactEhart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import { SxProps } from '@mui/material';
+import { SxProps, useTheme } from '@mui/material';
 
 echarts.use([TooltipComponent, GridComponent, BarChart, CanvasRenderer]);
 
@@ -20,6 +20,10 @@ type EChartsOption = echarts.ComposeOption<
 
 interface VolumeVsServiceChartProps {
   chartRef: MutableRefObject<EChartsReactCore | null>;
+  data: {
+    Volume: number[];
+    Services: number[];
+  };
   style?: {
     height: number;
     width?: number;
@@ -27,10 +31,12 @@ interface VolumeVsServiceChartProps {
   sx: SxProps;
 }
 
-const VolumeVsServiceChart = ({ chartRef, style, ...rest }: VolumeVsServiceChartProps) => {
+const VolumeVsServiceChart = ({ chartRef, data, style, ...rest }: VolumeVsServiceChartProps) => {
+  const theme = useTheme();
+
   const volumeVsServiceChartOption = useMemo(() => {
     const option: EChartsOption = {
-      color: ['#00E096', '#0095FF'],
+      color: [theme.palette.success.main, theme.palette.info.main],
       legend: {
         show: false,
       },
@@ -58,19 +64,9 @@ const VolumeVsServiceChart = ({ chartRef, style, ...rest }: VolumeVsServiceChart
 
       series: [
         {
-          name: 'Volume',
-          type: 'bar',
-          data: [78, 89, 36, 78, 41, 36, 61],
-          itemStyle: {
-            borderRadius: 2,
-          },
-          stack: 'total',
-          barWidth: '20%',
-        },
-        {
           name: 'Services',
           type: 'bar',
-          data: [60, 79, 102, 92, 84, 60, 43],
+          data: data.Services,
           itemStyle: {
             borderRadius: 2,
           },
@@ -78,10 +74,20 @@ const VolumeVsServiceChart = ({ chartRef, style, ...rest }: VolumeVsServiceChart
           stack: 'total',
           barWidth: '20%',
         },
+        {
+          name: 'Volume',
+          type: 'bar',
+          data: data.Volume,
+          itemStyle: {
+            borderRadius: 2,
+          },
+          stack: 'total',
+          barWidth: '20%',
+        },
       ],
     };
     return option;
-  }, []);
+  }, [theme, data]);
 
   return (
     <ReactEchart

@@ -1,8 +1,17 @@
-import { Chip, LinearProgress, TableCell, TableRow, alpha } from '@mui/material';
+import { Chip, LinearProgress, TableCell, TableRow, alpha, useTheme } from '@mui/material';
 import { Product } from 'data/top-products';
 
 const TopProduct = ({ product }: { product: Product }) => {
+  const theme = useTheme();
+
   const { id, name, color, sales } = product;
+
+  const [paletteOption, simplePaletteColorOption] = color.split('.') as [
+    keyof typeof theme.palette,
+    keyof (typeof theme.palette)[keyof typeof theme.palette],
+  ];
+
+  const productColor = theme.palette[paletteOption][simplePaletteColorOption];
 
   return (
     <TableRow>
@@ -13,7 +22,7 @@ const TopProduct = ({ product }: { product: Product }) => {
           variant="determinate"
           value={product.sales}
           sx={{
-            bgcolor: alpha(color, 0.2),
+            bgcolor: alpha(productColor, 0.2),
             borderRadius: 2,
             width: 180,
             '& .MuiLinearProgress-bar': {

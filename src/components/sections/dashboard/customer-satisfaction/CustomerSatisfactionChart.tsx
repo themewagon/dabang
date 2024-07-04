@@ -13,6 +13,7 @@ import { CanvasRenderer } from 'echarts/renderers';
 import { MutableRefObject, useMemo } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import ReactEchart from 'components/base/ReactEhart';
+import { alpha, useTheme } from '@mui/material';
 
 echarts.use([
   TooltipComponent,
@@ -29,16 +30,22 @@ type EChartsOption = echarts.ComposeOption<
 
 interface CustomerSatisfactionChart {
   chartRef: MutableRefObject<EChartsReactCore | null>;
+  data: {
+    'Last Month': number[];
+    'This Month': number[];
+  };
   style?: {
     height?: number;
     width?: number;
   };
 }
 
-const CustomerSatisfactionChart = ({ chartRef, style }: CustomerSatisfactionChart) => {
+const CustomerSatisfactionChart = ({ chartRef, data, style }: CustomerSatisfactionChart) => {
+  const theme = useTheme();
+
   const customerSatisfactionChartOption = useMemo(() => {
     const option: EChartsOption = {
-      color: ['#0095FF', '#07E098'],
+      color: [theme.palette.info.main, theme.palette.success.dark],
       tooltip: {
         // trigger: 'axis',
         show: false,
@@ -81,11 +88,11 @@ const CustomerSatisfactionChart = ({ chartRef, style }: CustomerSatisfactionChar
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
               {
                 offset: 1,
-                color: 'rgba(0, 149, 255, 0)',
+                color: alpha(theme.palette.info.main, 0),
               },
               {
                 offset: 0,
-                color: 'rgba(0, 157, 255, 0.32)',
+                color: alpha(theme.palette.info.main, 0.31),
               },
             ]),
           },
@@ -93,7 +100,7 @@ const CustomerSatisfactionChart = ({ chartRef, style }: CustomerSatisfactionChar
           emphasis: {
             focus: 'series',
           },
-          data: [120, 132, 101, 134, 90, 230, 210],
+          data: data['Last Month'],
           symbol: 'circle',
           symbolSize: 8,
         },
@@ -106,25 +113,25 @@ const CustomerSatisfactionChart = ({ chartRef, style }: CustomerSatisfactionChar
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
               {
                 offset: 1,
-                color: 'rgba(255, 255, 255, 0)',
+                color: alpha(theme.palette.success.main, 0),
               },
               {
                 offset: 0,
-                color: 'rgba(0, 224, 150, 0.33)',
+                color: alpha(theme.palette.success.main, 0.32),
               },
             ]),
           },
           emphasis: {
             focus: 'series',
           },
-          data: [220, 182, 191, 234, 290, 330, 310],
+          data: data['This Month'],
           symbol: 'circle',
           symbolSize: 8,
         },
       ],
     };
     return option;
-  }, []);
+  }, [theme, data]);
 
   return (
     <ReactEchart

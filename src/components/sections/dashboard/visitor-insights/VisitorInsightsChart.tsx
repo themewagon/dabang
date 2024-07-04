@@ -13,6 +13,7 @@ import { CanvasRenderer } from 'echarts/renderers';
 import { MutableRefObject, useMemo } from 'react';
 import ReactEchart from 'components/base/ReactEhart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
+import { useTheme } from '@mui/material';
 
 echarts.use([
   TooltipComponent,
@@ -29,22 +30,34 @@ type EChartsOption = echarts.ComposeOption<
 
 interface VisitorInsightsChartProps {
   chartRef: MutableRefObject<EChartsReactCore | null>;
+  data: {
+    'Loyal Customers': number[];
+    'New Customers': number[];
+    'Unique Customers': number[];
+  };
   style?: {
     height: number;
     width?: number;
   };
 }
 
-const VisitorInsightsChart = ({ chartRef, style }: VisitorInsightsChartProps) => {
+const VisitorInsightsChart = ({ chartRef, data, style }: VisitorInsightsChartProps) => {
+  const theme = useTheme();
+
   const visitorInsightsChartOption = useMemo(() => {
     const option: EChartsOption = {
-      color: ['#A700FF', '#EF4444', '#3CD856'],
+      color: [
+        theme.palette.secondary.darker,
+        theme.palette.error.darker,
+        theme.palette.success.darker,
+      ],
+
       tooltip: {
         trigger: 'axis',
         confine: true,
         axisPointer: {
           lineStyle: {
-            color: 'red',
+            color: theme.palette.error.main,
           },
         },
       },
@@ -60,9 +73,9 @@ const VisitorInsightsChart = ({ chartRef, style }: VisitorInsightsChartProps) =>
           show: false,
         },
         axisLabel: {
-          fontFamily: 'Epilogue',
-          fontSize: 10,
-          color: '#464E5F',
+          fontFamily: theme.typography.button.fontFamily,
+          fontSize: theme.typography.fontSize / 1.4,
+          color: theme.palette.grey[200],
         },
         axisLine: {
           show: false,
@@ -72,13 +85,12 @@ const VisitorInsightsChart = ({ chartRef, style }: VisitorInsightsChartProps) =>
       yAxis: {
         type: 'value',
         axisLabel: {
-          fontFamily: 'Poppins',
-          fontSize: 12,
-          color: '#7B91B0',
+          fontSize: theme.typography.caption.fontSize,
+          color: theme.palette.grey.A200,
         },
         splitLine: {
           lineStyle: {
-            color: '#EFF1F3',
+            color: theme.palette.grey.A400,
           },
         },
       },
@@ -95,9 +107,9 @@ const VisitorInsightsChart = ({ chartRef, style }: VisitorInsightsChartProps) =>
         {
           name: 'Loyal Customers',
           type: 'line',
-          data: [320, 300, 240, 190, 200, 220, 300, 310, 300, 260, 180, 150],
+          data: data['Loyal Customers'],
           smooth: true,
-          // smoothMonotone:'x',
+          // smoothMonotone: 'x',
           symbol: 'circle',
           showSymbol: false,
           symbolSize: 14,
@@ -109,21 +121,20 @@ const VisitorInsightsChart = ({ chartRef, style }: VisitorInsightsChartProps) =>
         {
           name: 'New Customers',
           type: 'line',
-          data: [250, 220, 180, 120, 180, 280, 350, 310, 300, 290, 200, 148],
+          data: data['New Customers'],
           smooth: true,
           // smoothMonotone:'x',
           symbol: 'circle',
           showSymbol: false,
           symbolSize: 14,
           lineStyle: {
-            // color: '#EF4444',
             width: 4,
           },
         },
         {
           name: 'Unique Customers',
           type: 'line',
-          data: [280, 340, 310, 280, 220, 180, 250, 300, 305, 310, 250, 200],
+          data: data['Unique Customers'],
           smooth: true,
           // smoothMonotone:'x',
           symbol: 'circle',
@@ -136,7 +147,7 @@ const VisitorInsightsChart = ({ chartRef, style }: VisitorInsightsChartProps) =>
       ],
     };
     return option;
-  }, []);
+  }, [theme, data]);
 
   return (
     <ReactEchart

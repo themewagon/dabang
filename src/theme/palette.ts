@@ -1,20 +1,29 @@
 import { PaletteColorOptions, PaletteOptions } from '@mui/material/styles';
-import { indigo, grey, orange, red, green, purple } from './colors';
+import { indigo, grey, orange, red, green, purple, blue, yellow } from './colors';
 
 declare module '@mui/material/styles' {
-  interface PaletteOptions {
-    neutral?: PaletteColorOptions;
-  }
-  interface SimplePaletteColorOptions {
-    lighter?: string;
-    darker?: string;
-  }
   interface Palette {
     neutral: PaletteColor;
+    green: PaletteColor;
+    orange: PaletteColor;
+    red: PaletteColor;
+    yellow: PaletteColor;
+  }
+
+  interface PaletteOptions {
+    neutral?: PaletteColorOptions;
+    green?: PaletteColorOptions;
+    orange?: PaletteColorOptions;
+    red?: PaletteColorOptions;
+    yellow?: PaletteColorOptions;
   }
   interface PaletteColor {
     lighter: string;
     darker: string;
+  }
+  interface SimplePaletteColorOptions {
+    lighter?: string;
+    darker?: string;
   }
 }
 
@@ -29,9 +38,6 @@ const palette: PaletteOptions = {
   action: {
     hover: indigo[300],
     selected: indigo[500],
-    // disabled: grey[400],
-    // disabledBackground: grey[200],
-    // focus: grey[300],
   },
   neutral: {
     lighter: grey[50], //used
@@ -52,7 +58,10 @@ const palette: PaletteOptions = {
 
   secondary: {
     lighter: purple[50],
+    light: purple[300],
     main: purple[500],
+    dark: purple[700],
+    darker: purple[900],
   },
 
   error: {
@@ -60,6 +69,7 @@ const palette: PaletteOptions = {
     light: red[300],
     main: red[500],
     dark: red[700],
+    darker: red[900],
   },
 
   warning: {
@@ -67,20 +77,40 @@ const palette: PaletteOptions = {
     light: orange[300],
     main: orange[500],
     dark: orange[700],
+    darker: orange[900],
   },
 
   success: {
     lighter: green[50],
+    light: green[300],
     main: green[500],
+    dark: green[700],
+    darker: green[900],
   },
-  // info: {
-  //   lighter: lightBlue[50],
-  //   light: lightBlue[300],
-  //   main: lightBlue[500],
-  //   dark: lightBlue[700],
-  //   darker: lightBlue[900],
-  //   contrastText: '#ffffff',
-  // },
+
+  info: {
+    light: blue[300],
+    main: blue[500],
+  },
+
+  green: {
+    light: green[100],
+    main: green[200],
+    dark: green[400],
+    darker: green[600],
+  },
+
+  orange: {
+    main: orange[400],
+  },
+
+  red: {
+    main: red[800],
+  },
+
+  yellow: {
+    main: yellow[500],
+  },
 };
 
 export default palette;

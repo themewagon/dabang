@@ -34,7 +34,7 @@ export const sales: SaleItem[] = [
     value: '5',
     growth: '+1.2%',
     bgColor: 'success.lighter',
-    iconBackgroundColor: 'success.main',
+    iconBackgroundColor: 'success.darker',
     icon: 'ion:pricetag',
   },
   {

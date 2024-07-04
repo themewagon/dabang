@@ -3,13 +3,14 @@ import { useEffect, useRef, useState } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import VolumeVsServiceChart from './VolumeVsServiceChart';
 import { CallbackDataParams } from 'echarts/types/src/util/types.js';
-import LegendToggleButton from './LegendToggleButton';
+import { volumeVsService } from 'data/volume-vs-service';
+import LegendToggleButtonWithValue from '../../../common/LegendToggleButtonWithValue';
 
 const VolumeVsService = () => {
   const chartRef = useRef<EChartsReactCore | null>(null);
+
   const [volume, setVolume] = useState<string>('');
   const [services, setServices] = useState<string>('');
-
   const [legend, setLegend] = useState({
     Volume: false,
     Services: false,
@@ -21,18 +22,18 @@ const VolumeVsService = () => {
 
       const handleMouseOver = (params: CallbackDataParams) => {
         if (params.seriesIndex === 0) {
-          setVolume(params?.value?.toString() || '');
-          // setVolume(params?.value!.toString());
-        } else {
           setServices(params?.value?.toString() || '');
+          // setServices(params?.value!.toString());
+        } else {
+          setVolume(params?.value?.toString() || '');
         }
       };
 
       const handleMouseOut = (params: CallbackDataParams) => {
         if (params.seriesIndex === 0) {
-          setVolume('');
-        } else {
           setServices('');
+        } else {
+          setVolume('');
         }
       };
 
@@ -70,30 +71,37 @@ const VolumeVsService = () => {
         Volume vs Service Level
       </Typography>
 
-      <VolumeVsServiceChart chartRef={chartRef} style={{ height: 190 }} sx={{ pb: 1 }} />
+      <VolumeVsServiceChart
+        chartRef={chartRef}
+        data={volumeVsService}
+        style={{ height: 190 }}
+        sx={{ pb: 1 }}
+      />
 
       <Stack
         direction="row"
         justifyContent="center"
         divider={<Divider orientation="vertical" flexItem sx={{ height: 24 }} />}
-        sx={{ borderTop: 1, borderColor: '#EDF2F6', pt: 2 }}
+        sx={{ borderTop: 1, borderColor: 'grey.A100', pt: 2 }}
         gap={2.5}
       >
-        <LegendToggleButton
+        <LegendToggleButtonWithValue
           name="Volume"
-          color="#00E096"
+          icon="codicon:circle-filled"
+          color="info.main"
           value={volume}
+          currency={false}
           legend={legend}
-          icon="codicon:circle-filled"
-          handleLegendToggle={handleLegendToggle}
+          onHandleLegendToggle={handleLegendToggle}
         />
-        <LegendToggleButton
+        <LegendToggleButtonWithValue
           name="Services"
-          color="#0095FF"
-          value={services}
-          legend={legend}
           icon="codicon:circle-filled"
-          handleLegendToggle={handleLegendToggle}
+          color="success.main"
+          value={services}
+          currency={false}
+          legend={legend}
+          onHandleLegendToggle={handleLegendToggle}
         />
       </Stack>
     </Paper>

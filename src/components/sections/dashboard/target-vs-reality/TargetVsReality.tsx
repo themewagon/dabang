@@ -1,27 +1,7 @@
 import { Paper, Stack, Typography } from '@mui/material';
 import TargetVsRealityChart from './TargetVsRealityChart';
 import IconifyIcon from 'components/base/IconifyIcon';
-
-const salesData = [
-  {
-    label: 'Reality Sales',
-    type: 'Global',
-    value: 8.823,
-    color: '#27AE60',
-    iconBgColor: '#E2FFF3',
-    icon: 'solar:bag-5-outline',
-    iconColor: '#4AB58E',
-  },
-  {
-    label: 'Target Sales',
-    type: 'Commercial',
-    value: 12.122,
-    color: '#FFA412',
-    iconBgColor: '#FFF4DE',
-    icon: 'solar:ticker-star-outline',
-    iconColor: '#FFA800',
-  },
-];
+import { salesData, targetVsReality } from 'data/target-vs-reality';
 
 const TargetVsReality = () => {
   return (
@@ -30,7 +10,7 @@ const TargetVsReality = () => {
         Target vs Reality
       </Typography>
 
-      <TargetVsRealityChart style={{ height: 151 }} />
+      <TargetVsRealityChart style={{ height: 151 }} data={targetVsReality} />
 
       <Stack mt={2.25} spacing={1.875}>
         {salesData.map((item) => (
@@ -45,14 +25,18 @@ const TargetVsReality = () => {
             <div>
               <Typography
                 variant="caption"
-                sx={{ color: '#151D48', fontWeight: 600, whiteSpace: 'nowrap' }}
+                sx={(theme) => ({
+                  color: 'primary.darker',
+                  fontWeight: theme.typography.h3.fontWeight,
+                  whiteSpace: 'nowrap',
+                })}
               >
                 {item.label}
               </Typography>
               <Typography
                 sx={(theme) => ({
-                  color: '#737791',
-                  fontWeight: theme.typography.fontWeightRegular,
+                  color: 'primary.lighter',
+                  fontWeight: 'fontWeightRegular',
                   fontSize: theme.typography.fontSize / 1.4,
                 })}
               >

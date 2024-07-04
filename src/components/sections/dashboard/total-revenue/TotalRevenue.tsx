@@ -1,37 +1,13 @@
-import { Button, Paper, Stack, Typography } from '@mui/material';
+import { Paper, Stack, Typography } from '@mui/material';
 import TotalRevenueChart from './TotalRevenueChart';
 import { useRef, useState } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import IconifyIcon from 'components/base/IconifyIcon';
-
-const TotalRevenueLegendToggleButton = ({
-  name,
-  color,
-  legend,
-  handleLegendToggle,
-}: {
-  name: keyof typeof legend;
-  color: string;
-  legend: { [key: string]: boolean };
-  handleLegendToggle: (name: keyof typeof legend) => void;
-}) => {
-  return (
-    <Button
-      size="small"
-      startIcon={<IconifyIcon icon="codicon:circle-filled" sx={{ color }} />}
-      onClick={() => handleLegendToggle(name)}
-      sx={{ opacity: legend[name] ? 0.5 : 1 }}
-      disableRipple
-    >
-      <Typography variant="button" color="#464E5F" whiteSpace="nowrap" alignSelf="end">
-        {name}
-      </Typography>
-    </Button>
-  );
-};
+import { totalRevenue } from 'data/total-revenue';
+import LegendToggleButton from 'components/common/LegendToggleButton';
 
 const TotalRevenue = () => {
   const chartRef = useRef<EChartsReactCore | null>(null);
+
   const [legend, setLegend] = useState({
     'Online Sales': false,
     'Offline Sales': false,
@@ -58,20 +34,22 @@ const TotalRevenue = () => {
         Total Revenue
       </Typography>
 
-      <TotalRevenueChart chartRef={chartRef} style={{ height: 190 }} />
+      <TotalRevenueChart chartRef={chartRef} data={totalRevenue} style={{ height: 190 }} />
 
       <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="center" gap={1} mt={3} px={3}>
-        <TotalRevenueLegendToggleButton
+        <LegendToggleButton
           name="Online Sales"
-          color="#0095FF"
+          icon="codicon:circle-filled"
+          color="info.main"
           legend={legend}
-          handleLegendToggle={handleLegendToggle}
+          onHandleLegendToggle={handleLegendToggle}
         />
-        <TotalRevenueLegendToggleButton
+        <LegendToggleButton
           name="Offline Sales"
-          color="#00E096"
+          icon="codicon:circle-filled"
+          color="success.main"
           legend={legend}
-          handleLegendToggle={handleLegendToggle}
+          onHandleLegendToggle={handleLegendToggle}
         />
       </Stack>
     </Paper>

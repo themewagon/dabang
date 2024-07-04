@@ -13,6 +13,7 @@ import { BarChart, BarSeriesOption } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
 import { MutableRefObject, useMemo } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
+import { useTheme } from '@mui/material';
 
 echarts.use([TooltipComponent, GridComponent, LegendComponent, BarChart, CanvasRenderer]);
 type EChartsOption = echarts.ComposeOption<
@@ -21,16 +22,22 @@ type EChartsOption = echarts.ComposeOption<
 
 interface TotalRevenueChartProps {
   chartRef: MutableRefObject<EChartsReactCore | null>;
+  data: {
+    'Online Sales': number[];
+    'Offline Sales': number[];
+  };
   style?: {
     height: number;
     width?: number;
   };
 }
 
-const TotalRevenueChart = ({ chartRef, style }: TotalRevenueChartProps) => {
+const TotalRevenueChart = ({ chartRef, data, style }: TotalRevenueChartProps) => {
+  const theme = useTheme();
+
   const option: EChartsOption = useMemo(() => {
     return {
-      color: ['#0095FF', '#00E096'],
+      color: [theme.palette.info.main, theme.palette.success.main],
 
       tooltip: {
         confine: true,
@@ -49,9 +56,8 @@ const TotalRevenueChart = ({ chartRef, style }: TotalRevenueChartProps) => {
           show: false,
         },
         axisLabel: {
-          fontFamily: 'Poppins',
-          fontSize: 12,
-          color: '#7B91B0',
+          fontSize: theme.typography.fontSize - 2,
+          color: theme.palette.grey.A200,
           margin: 18,
         },
       },
@@ -59,16 +65,16 @@ const TotalRevenueChart = ({ chartRef, style }: TotalRevenueChartProps) => {
       yAxis: {
         type: 'value',
         axisLabel: {
-          fontFamily: 'Poppins',
-          fontSize: 12,
-          color: '#7B91B0',
+          // fontFamily: 'Poppins',
+          fontSize: theme.typography.fontSize - 2,
+          color: theme.palette.grey.A200,
           formatter: '{value}k',
           margin: 18,
         },
 
         splitLine: {
           lineStyle: {
-            color: '#EFF1F3',
+            color: theme.palette.grey.A400,
           },
         },
       },
@@ -85,7 +91,7 @@ const TotalRevenueChart = ({ chartRef, style }: TotalRevenueChartProps) => {
         {
           name: 'Online Sales',
           type: 'bar',
-          data: [14, 18, 6, 17, 12, 16, 22],
+          data: data['Online Sales'],
           itemStyle: {
             borderRadius: 2,
           },
@@ -94,7 +100,7 @@ const TotalRevenueChart = ({ chartRef, style }: TotalRevenueChartProps) => {
         {
           name: 'Offline Sales',
           type: 'bar',
-          data: [12, 11, 23, 6, 11, 14, 11],
+          data: data['Offline Sales'],
           itemStyle: {
             borderRadius: 2,
           },
@@ -102,7 +108,7 @@ const TotalRevenueChart = ({ chartRef, style }: TotalRevenueChartProps) => {
         },
       ],
     };
-  }, []);
+  }, [theme, data]);
 
   return <ReactEchart echarts={echarts} option={option} ref={chartRef} style={style} />;
 };

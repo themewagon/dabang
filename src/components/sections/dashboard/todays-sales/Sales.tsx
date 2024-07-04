@@ -5,13 +5,13 @@ import SaleCard from './SaleCard';
 
 const Sales = () => {
   return (
-    <Paper sx={(theme) => ({ border: `1px solid ${theme.palette.grey[200]}`, p: 3 })}>
-      <Stack direction="row" justifyContent="space-between" alignItems="center" mb={4}>
+    <Paper sx={{ pt: 2.875, pb: 4, px: 4 }}>
+      <Stack direction="row" justifyContent="space-between" alignItems="center" mb={5.375}>
         <div>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" mb={0.5}>
             Today's Sales
           </Typography>
-          <Typography variant="subtitle1" color="primary.lighter" gutterBottom>
+          <Typography variant="subtitle1" color="primary.lighter">
             Sales Summary
           </Typography>
         </div>

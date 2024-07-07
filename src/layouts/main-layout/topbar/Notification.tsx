@@ -7,7 +7,7 @@ const Notification = () => {
       aria-label="notifications"
       sx={{
         bgcolor: 'warning.light',
-        p: 1.5,
+        p: { xs: 1, sm: 1.5 },
         minWidth: 'auto',
       }}
     >

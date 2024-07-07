@@ -48,7 +48,7 @@ const TargetVsReality = () => {
               sx={{
                 fontWeight: 'fontWeightMedium',
                 color: item.color,
-                ml: { xs: 'auto', xl: 9.125 },
+                ml: { xs: 25, sm: 30, xl: 9.125 },
               }}
             >
               {item.value}

@@ -1,4 +1,4 @@
-import { Card, CardContent, Grid, Stack, Typography } from '@mui/material';
+import { Card, CardContent, Stack, Typography } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import { SaleItem } from 'data/sales';
 
@@ -12,40 +12,45 @@ const SaleCard = ({ item }: { item: SaleItem }) => {
   ) : null;
 
   return (
-    <Grid item xs={12} sm={6} md key={label}>
-      <Card
-        sx={{
-          borderRadius: 4,
-          bgcolor: bgColor,
-        }}
+    <Card
+      sx={{
+        borderRadius: 4,
+        bgcolor: bgColor,
+      }}
+    >
+      <CardContent
+        sx={(theme) => ({
+          p: {
+            xs: `${theme.spacing(2.5)} !important`,
+            // xl: `${theme.spacing(1)} !important`,
+          },
+        })}
       >
-        <CardContent sx={(theme) => ({ p: `${theme.spacing(2.5)} !important` })}>
-          <Stack
-            sx={{
-              width: 40,
-              height: 40,
-              borderRadius: '50%',
-              bgcolor: iconBackgroundColor,
-              justifyContent: 'center',
-              alignItems: 'center',
-              mb: 2,
-            }}
-          >
-            {Icon}
-          </Stack>
+        <Stack
+          sx={{
+            width: 40,
+            height: 40,
+            borderRadius: '50%',
+            bgcolor: iconBackgroundColor,
+            justifyContent: 'center',
+            alignItems: 'center',
+            mb: 2,
+          }}
+        >
+          {Icon}
+        </Stack>
 
-          <Typography variant="h3" color="primary.darker" mb={1}>
-            {value}
-          </Typography>
-          <Typography variant="h6" color="grey.800" whiteSpace="nowrap" component="p" mb={1}>
-            {label}
-          </Typography>
-          <Typography variant="caption" color="text.secondary" whiteSpace="nowrap" component="p">
-            {growth} from yesterday
-          </Typography>
-        </CardContent>
-      </Card>
-    </Grid>
+        <Typography variant="h3" color="primary.darker" mb={1}>
+          {value}
+        </Typography>
+        <Typography variant="h6" color="grey.800" whiteSpace="nowrap" component="p" mb={1}>
+          {label}
+        </Typography>
+        <Typography variant="caption" color="text.secondary" whiteSpace="nowrap" component="p">
+          {growth} from yesterday
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 

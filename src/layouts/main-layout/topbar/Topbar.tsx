@@ -36,6 +36,7 @@ const Topbar = ({ drawerWidth, onHandleDrawerToggle }: TopbarProps) => {
         <Toolbar
           sx={{
             justifyContent: 'space-between',
+            gap: { xs: 1, sm: 5 },
           }}
         >
           <Stack
@@ -65,19 +66,25 @@ const Topbar = ({ drawerWidth, onHandleDrawerToggle }: TopbarProps) => {
           <Typography
             variant="h1"
             color="primary.darker"
-            sx={{ display: { xs: 'none', xl: 'block' } }}
+            sx={{ display: { xs: 'none', lg: 'block' } }}
           >
             {pageTitle}
           </Typography>
-
-          <Search />
 
           <Stack
             direction="row"
             justifyContent="flex-end"
             alignItems="center"
             spacing={{ xs: 1, sm: 2, xl: 5.25 }}
+            width={1}
           >
+            <Search
+              sx={{
+                display: { xs: 'none', md: 'block' },
+                minWidth: 300,
+                maxWidth: 550,
+              }}
+            />
             <LanguageDropdown />
             <Notification />
             <AccountDropdown />

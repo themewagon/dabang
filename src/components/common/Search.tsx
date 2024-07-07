@@ -1,7 +1,11 @@
-import { InputAdornment, TextField } from '@mui/material';
+import { InputAdornment, SxProps, TextField } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 
-const Search = () => {
+interface SearchProps {
+  sx?: SxProps;
+}
+
+const Search = (props: SearchProps) => {
   return (
     <TextField
       id="input-with-searchIcon-textfield"
@@ -20,12 +24,7 @@ const Search = () => {
       placeholder="Search here..."
       hiddenLabel
       fullWidth
-      sx={{
-        display: { xs: 'none', md: 'block' },
-        ml: 20,
-        mr: 5.25,
-        // minWidth: 300,
-      }}
+      {...props}
     />
   );
 };

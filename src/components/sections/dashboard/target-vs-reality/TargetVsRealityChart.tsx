@@ -62,9 +62,8 @@ const TargetVsRealityChart = ({ style, data }: TargetVsRealityChartProps) => {
       grid: {
         top: 0,
         bottom: 0,
-        // left: '-7%',
-        left: 0,
-        right: '-1%',
+        left: -30,
+        right: 0,
         containLabel: true,
       },
 

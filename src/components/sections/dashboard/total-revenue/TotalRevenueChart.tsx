@@ -82,7 +82,7 @@ const TotalRevenueChart = ({ chartRef, data, style }: TotalRevenueChartProps) =>
       grid: {
         top: '4%',
         left: 0,
-        right: 0,
+        right: 6,
         bottom: 0,
         containLabel: true,
       },

@@ -1,4 +1,12 @@
-import { Chip, LinearProgress, TableCell, TableRow, alpha, useTheme } from '@mui/material';
+import {
+  Chip,
+  LinearProgress,
+  TableCell,
+  TableRow,
+  Typography,
+  alpha,
+  useTheme,
+} from '@mui/material';
 import { Product } from 'data/top-products';
 
 const TopProduct = ({ product }: { product: Product }) => {
@@ -16,7 +24,11 @@ const TopProduct = ({ product }: { product: Product }) => {
   return (
     <TableRow>
       <TableCell>0{id}</TableCell>
-      <TableCell size="small">{name}</TableCell>
+      <TableCell size="small">
+        <Typography variant="subtitle2" whiteSpace="nowrap">
+          {name}
+        </Typography>
+      </TableCell>
       <TableCell>
         <LinearProgress
           variant="determinate"

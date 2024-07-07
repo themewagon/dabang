@@ -2,6 +2,7 @@ import * as echarts from 'echarts/core';
 import {
   TooltipComponent,
   TooltipComponentOption,
+  LegendComponent,
   GridComponent,
   GridComponentOption,
 } from 'echarts/components';
@@ -12,7 +13,7 @@ import ReactEchart from 'components/base/ReactEhart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { SxProps, useTheme } from '@mui/material';
 
-echarts.use([TooltipComponent, GridComponent, BarChart, CanvasRenderer]);
+echarts.use([TooltipComponent, GridComponent, LegendComponent, BarChart, CanvasRenderer]);
 
 type EChartsOption = echarts.ComposeOption<
   TooltipComponentOption | GridComponentOption | BarSeriesOption

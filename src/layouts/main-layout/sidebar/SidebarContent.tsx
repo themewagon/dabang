@@ -23,7 +23,7 @@ const NavItems = () => {
 const SidebarContent = () => {
   return (
     <>
-      <Toolbar>
+      <Toolbar disableGutters>
         <LogoHeader />
       </Toolbar>
 

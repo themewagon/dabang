@@ -17,9 +17,6 @@ const TableCell: Components<Omit<Theme, 'components'>>['MuiTableCell'] = {
     }),
 
     body: ({ theme }) => ({
-      fontSize: theme.typography.subtitle2.fontSize,
-      fontWeight: theme.typography.subtitle2.fontWeight,
-      lineHeight: theme.typography.subtitle2.lineHeight,
       color: theme.palette.neutral.darker,
       padding: theme.spacing(2.25, 3.25),
     }),

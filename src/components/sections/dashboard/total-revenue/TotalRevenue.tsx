@@ -36,7 +36,7 @@ const TotalRevenue = () => {
 
       <TotalRevenueChart chartRef={chartRef} data={totalRevenue} style={{ height: 190 }} />
 
-      <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="center" gap={1} mt={3} px={3}>
+      <Stack direction="row" justifyContent="center" gap={1} mt={3}>
         <LegendToggleButton
           name="Online Sales"
           icon="codicon:circle-filled"

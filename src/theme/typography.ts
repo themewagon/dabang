@@ -61,6 +61,7 @@ const typography: TypographyOptions = {
     fontWeight: 500,
     fontSize: '1rem', // 16px
     lineHeight: 1.5, // 24px
+    fontFamily: 'Poppins',
   },
 
   body2: {

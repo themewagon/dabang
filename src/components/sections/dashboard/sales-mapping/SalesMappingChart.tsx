@@ -13,7 +13,7 @@ import EChartsReactCore from 'echarts-for-react/lib/core';
 import { SalesMappingDataItem } from 'data/sales-mapping-data';
 import ReactEchart from 'components/base/ReactEhart';
 import world from 'assets/json/world.json';
-import { useTheme } from '@mui/material';
+import { SxProps, useTheme } from '@mui/material';
 
 echarts.use([TooltipComponent, GeoComponent, MapChart, CanvasRenderer]);
 //@ts-ignore
@@ -30,9 +30,15 @@ interface SalesMappingChartProps {
     height?: number;
     width?: number;
   };
+  sx?: SxProps;
 }
 
-const SalesMappingChart = ({ salesMappingChartRef, data, style }: SalesMappingChartProps) => {
+const SalesMappingChart = ({
+  salesMappingChartRef,
+  data,
+  style,
+  ...rest
+}: SalesMappingChartProps) => {
   const theme = useTheme();
 
   const salesMappingChartOption = useMemo(() => {
@@ -81,6 +87,7 @@ const SalesMappingChart = ({ salesMappingChartRef, data, style }: SalesMappingCh
       option={salesMappingChartOption}
       ref={salesMappingChartRef}
       style={style}
+      {...rest}
     />
   );
 };

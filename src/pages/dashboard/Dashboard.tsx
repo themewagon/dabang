@@ -7,35 +7,40 @@ import TargetVsReality from 'components/sections/dashboard/target-vs-reality/Tar
 import TopProducts from 'components/sections/dashboard/top-products/TopProducts';
 import SalesMapping from 'components/sections/dashboard/sales-mapping/SalesMapping';
 import VolumeVsService from 'components/sections/dashboard/volume-vs-service/VolumeVsService';
+import ProductPerformance from 'components/sections/dashboard/product-performance/ProductPerformance';
 
 const Dashboard = () => {
   return (
     <Grid container spacing={4}>
-      <Grid item xs={12} xl={7}>
+      <Grid item xs={12} xl={7.5}>
         <Sales />
       </Grid>
-      <Grid item xs={12} xl={5}>
+      <Grid item xs={12} xl={4.5}>
         <VisitorInsights />
       </Grid>
 
-      <Grid item xs={12} xl={6}>
+      <Grid item xs={12} xl={5.5}>
         <TotalRevenue />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} xl={3.25}>
         <CustomerSatisfaction />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} xl={3.25}>
         <TargetVsReality />
       </Grid>
 
-      <Grid item xs={12} xl={6}>
+      <Grid item xs={12} xl={5.5}>
         <TopProducts />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} md={6} xl={3.25}>
         <SalesMapping />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} md={6} xl={3.25}>
         <VolumeVsService />
+      </Grid>
+
+      <Grid item xs={12}>
+        <ProductPerformance />
       </Grid>
     </Grid>
   );

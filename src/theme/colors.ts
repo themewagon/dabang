@@ -26,6 +26,7 @@ export const indigo = {
 };
 
 export const blue = {
+  50: '#b3e5fc',
   300: '#6993FF',
   500: '#0095FF',
 };

@@ -57,8 +57,7 @@ const CustomerSatisfactionChart = ({ chartRef, data, style }: CustomerSatisfacti
 
       grid: {
         top: 0,
-        // left: '-8%',
-        left: 0,
+        left: -26,
         right: 4,
         bottom: 0,
         containLabel: true,

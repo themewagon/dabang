@@ -11,6 +11,11 @@ const Chip: Components<Omit<Theme, 'components'>>['MuiChip'] = {
       fontSize: theme.typography.body2.fontSize,
       lineHeight: theme.typography.body2.lineHeight,
     }),
+    filled: ({ theme }) => ({
+      height: theme.spacing(3),
+      borderRadius: theme.shape.borderRadius * 2,
+      fontSize: theme.typography.subtitle2.fontSize,
+    }),
   },
 };
 

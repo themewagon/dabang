@@ -74,13 +74,14 @@ const AccountDropdown = () => {
         aria-controls={open ? 'account-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
+        sx={{ px: { xs: 1, sm: 2 }, minWidth: 'auto' }}
       >
         <Avatar
           sx={{
-            width: { xs: 50, sm: 60 },
-            height: { xs: 50, sm: 60 },
+            width: { xs: 48, sm: 60 },
+            height: { xs: 48, sm: 60 },
             borderRadius: 4,
-            mr: { xl: 2.5 },
+            mr: { xs: 0, xl: 2.5 },
           }}
           alt="User Profile"
           src={Profile}

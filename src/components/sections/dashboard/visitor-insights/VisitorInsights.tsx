@@ -45,10 +45,10 @@ const VisitorInsights = () => {
         direction={{ xs: 'column', sm: 'row' }}
         justifyContent="center"
         alignItems="flex-start"
-        // alignItems={{ xs: 'flex-start' }}
         mt={4}
-        px={3}
-        spacing={1}
+        pl={3}
+        rowGap={1}
+        columnGap={2}
       >
         <LegendToggleButton
           name="Loyal Customers"

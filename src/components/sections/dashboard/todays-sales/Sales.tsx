@@ -20,9 +20,11 @@ const Sales = () => {
         </Button>
       </Stack>
 
-      <Grid container spacing={4}>
+      <Grid container spacing={{ xs: 3.875, xl: 1 }} columns={{ xs: 1, sm: 2, lg: 4, xl: 4 }}>
         {sales.map((item) => (
-          <SaleCard key={item.label} item={item} />
+          <Grid item xs={1} key={item.label}>
+            <SaleCard item={item} />
+          </Grid>
         ))}
       </Grid>
     </Paper>

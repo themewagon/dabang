@@ -39,6 +39,7 @@ const palette: PaletteOptions = {
     hover: indigo[300],
     selected: indigo[500],
   },
+
   neutral: {
     lighter: grey[50], //used
     light: grey[300], // This is used
@@ -89,6 +90,7 @@ const palette: PaletteOptions = {
   },
 
   info: {
+    lighter: blue[50],
     light: blue[300],
     main: blue[500],
   },

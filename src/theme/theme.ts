@@ -20,10 +20,21 @@ import MenuItem from './components/MenuItem';
 import shadows from './shadows';
 import TableCell from './components/TableCell';
 import Chip from './components/Chip';
+import DataGrid from './components/Datagrid';
+import PaginationItem from './components/PaginationItem';
 
 export const theme = createTheme({
   palette,
   typography,
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1680,
+    },
+  },
   mixins: {
     toolbar: {
       minHeight: 120,
@@ -54,6 +65,8 @@ export const theme = createTheme({
     MuiCssBaseline: CssBaseline,
     MuiLink: Link,
     MuiChip: Chip,
+    MuiDataGrid: DataGrid,
+    MuiPaginationItem: PaginationItem,
   },
 });
 

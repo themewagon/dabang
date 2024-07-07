@@ -9,8 +9,8 @@ const SalesMapping = () => {
   const salesMappingData = getSalesMappingData();
 
   return (
-    <Paper sx={{ py: 3, px: 3 }}>
-      <Typography variant="h4" color="primary.dark" mb={1.375}>
+    <Paper sx={{ py: 3 }}>
+      <Typography variant="h4" color="primary.dark" mb={1.375} pl={3}>
         Sales Mapping by Country
       </Typography>
 
@@ -18,6 +18,7 @@ const SalesMapping = () => {
         salesMappingChartRef={salesMappingChartRef}
         data={salesMappingData}
         style={{ height: 260 }}
+        sx={{ px: 3 }}
       />
     </Paper>
   );

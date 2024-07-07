@@ -81,7 +81,7 @@ const LanguageDropdown = () => {
         aria-controls={open ? 'language-dropdown' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
-        sx={{ py: 2.0625 }}
+        sx={{ py: { sm: 2.25 }, px: { xs: 1, sm: 2.25 }, minWidth: { xs: 'auto' } }}
       >
         <IconifyIcon icon={languages[selectedIndex].flag} fontSize={24} />
         <Stack direction="row" alignItems="center" sx={{ display: { xs: 'none', xl: 'flex' } }}>

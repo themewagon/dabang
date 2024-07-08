@@ -2,6 +2,7 @@ import { Box, Stack, Toolbar } from '@mui/material';
 import { PropsWithChildren, useState } from 'react';
 import VerticalNavbar from './sidebar/VerticalNavbar';
 import Topbar from './topbar/Topbar';
+import Footer from './footer/Footer';
 
 const drawerWidth = 345;
 
@@ -51,6 +52,7 @@ const MainLayout = ({ children }: PropsWithChildren) => {
       >
         <Toolbar />
         {children}
+        <Footer />
       </Box>
     </Stack>
   );

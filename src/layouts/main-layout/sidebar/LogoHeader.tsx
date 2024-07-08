@@ -1,10 +1,20 @@
-import { Link, Stack, Typography } from '@mui/material';
+import { Link, Stack, SxProps, Typography } from '@mui/material';
 import Logo from 'components/icons/Logo';
 import { rootPaths } from 'routes/paths';
 
-const LogoHeader = () => {
+interface LogoHeaderProps {
+  sx?: SxProps;
+}
+const LogoHeader = (props: LogoHeaderProps) => {
   return (
-    <Stack component={Link} href={rootPaths.root} direction="row" alignItems="center" columnGap={3}>
+    <Stack
+      direction="row"
+      alignItems="center"
+      columnGap={3}
+      component={Link}
+      href={rootPaths.root}
+      {...props}
+    >
       <Logo sx={{ fontSize: 56 }} />
       <Typography variant="h2" color="primary.darker">
         Dabang

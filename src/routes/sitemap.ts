@@ -1,5 +1,5 @@
 import DashboardIcon from 'components/icons/DashboardIcon';
-import { rootPaths } from './paths';
+import paths, { rootPaths } from './paths';
 import { SvgIconProps } from '@mui/material';
 
 export interface MenuItem {
@@ -21,6 +21,29 @@ const sitemap: MenuItem[] = [
     pathName: 'dashboard',
     svgIcon: DashboardIcon,
     active: true,
+  },
+  {
+    id: 9,
+    name: 'Authentication',
+    pathName: 'authentication',
+    icon: 'material-symbols:security-rounded',
+    active: true,
+    items: [
+      {
+        id: 10,
+        name: 'Login',
+        path: paths.login,
+        pathName: 'login',
+        active: true,
+      },
+      {
+        id: 11,
+        name: 'Sign up',
+        path: paths.signup,
+        pathName: 'sign-up',
+        active: true,
+      },
+    ],
   },
   {
     id: 2,
@@ -73,38 +96,6 @@ const sitemap: MenuItem[] = [
     icon: 'humbleicons:logout',
     active: true,
   },
-  // {
-  //   name: 'Authentication',
-  //   pathName: 'authentication',
-  //   icon: 'material-symbols:security-rounded',
-  //   active: true,
-  //   items: [
-  //     {
-  //       name: 'Login',
-  //       path: paths.login,
-  //       pathName: 'login',
-  //       active: true,
-  //     },
-  //     {
-  //       name: 'Sign up',
-  //       path: paths.signup,
-  //       pathName: 'sign-up',
-  //       active: true,
-  //     },
-  //     {
-  //       name: 'Forgot password',
-  //       path: paths.forgotPassword,
-  //       pathName: 'forgot-password',
-  //       active: true,
-  //     },
-  //     {
-  //       name: '2FA',
-  //       path: paths['2FA'],
-  //       pathName: '2FA',
-  //       active: true,
-  //     },
-  //   ],
-  // },
 ];
 
 export default sitemap;

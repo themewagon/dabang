@@ -22,6 +22,7 @@ import TableCell from './components/TableCell';
 import Chip from './components/Chip';
 import DataGrid from './components/Datagrid';
 import PaginationItem from './components/PaginationItem';
+import OutlinedInput from './components/OutlinedInput';
 
 export const theme = createTheme({
   palette,
@@ -46,18 +47,17 @@ export const theme = createTheme({
     MuiPaper: Paper,
     MuiStack: Stack,
     MuiDrawer: Drawer,
-    // MuiButtonBase: ButtonBase,
+
     MuiButton: Button,
     MuiListItemButton: ListItemButton,
     MuiListItemText: ListItemText,
     MuiListItemIcon: ListItemIcon,
     MuiBadge: Badge,
 
-    // input fields
-    // MuiTextField: TextField,
     MuiInputBase: InputBase,
     MuiFilledInput: FilledInput,
     MuiInputAdornment: InputAdornment,
+    MuiOutlinedInput: OutlinedInput,
 
     MuiMenuItem: MenuItem,
 

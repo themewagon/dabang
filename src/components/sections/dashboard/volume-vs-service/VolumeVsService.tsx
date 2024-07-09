@@ -68,7 +68,7 @@ const VolumeVsService = () => {
   return (
     <Paper sx={{ pt: 3.125, pb: 1.875 }}>
       <Typography variant="h4" color="primary.dark" mb={3} pl={3}>
-        Volume vs Service Level
+        Volume vs Service
       </Typography>
 
       <VolumeVsServiceChart

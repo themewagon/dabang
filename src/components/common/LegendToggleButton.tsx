@@ -22,6 +22,8 @@ const LegendToggleButton = ({
   svgIcon: SvgIcon,
   color,
   legend,
+  // value,
+  // currency,
   onHandleLegendToggle,
 }: LegendToggleButtonProps) => {
   const Icon = icon ? (
@@ -35,7 +37,7 @@ const LegendToggleButton = ({
       size="small"
       startIcon={Icon}
       onClick={() => onHandleLegendToggle(name)}
-      sx={{ opacity: legend[name] ? 0.5 : 1 }}
+      sx={{ opacity: legend[name] ? 0.5 : 1, '&:hover': { bgcolor: 'transparent' } }}
       disableRipple
     >
       <Typography variant="button" whiteSpace="nowrap" alignSelf="end" sx={{ color: 'grey.200' }}>

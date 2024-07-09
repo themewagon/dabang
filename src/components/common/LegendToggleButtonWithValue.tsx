@@ -39,7 +39,7 @@ const LegendToggleButtonWithValue = ({
         size="small"
         startIcon={Icon}
         onClick={() => onHandleLegendToggle(name)}
-        sx={{ opacity: legend[name] ? 0.5 : 1 }}
+        sx={{ opacity: legend[name] ? 0.5 : 1, '&:hover': { bgcolor: 'transparent' } }}
         disableRipple
       >
         <Typography variant="button" whiteSpace="nowrap" alignSelf="end" sx={{ color: 'grey.200' }}>

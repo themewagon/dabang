@@ -27,8 +27,9 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
 
     columnHeaderTitle: ({ theme }) => ({
       color: theme.palette.primary.darker,
+      fontFamily: theme.typography.body1.fontFamily,
       fontSize: theme.typography.htmlFontSize,
-      fontWeight: theme.typography.fontWeightBold,
+      fontWeight: theme.typography.fontWeightMedium,
       marginRight: theme.spacing(1),
     }),
 

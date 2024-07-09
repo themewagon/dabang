@@ -30,7 +30,7 @@ export const sales: SaleItem[] = [
     svgIcon: OrderIcon,
   },
   {
-    label: 'Product Sold',
+    label: 'Sold',
     value: '5',
     growth: '+1.2%',
     bgColor: 'success.lighter',
@@ -38,7 +38,7 @@ export const sales: SaleItem[] = [
     icon: 'ion:pricetag',
   },
   {
-    label: 'New Customers',
+    label: 'Customers',
     value: '8',
     growth: '0.5%',
     bgColor: 'secondary.lighter',

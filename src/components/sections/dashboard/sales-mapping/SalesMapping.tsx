@@ -18,6 +18,8 @@ const SalesMapping = () => {
         salesMappingChartRef={salesMappingChartRef}
         data={salesMappingData}
         style={{ height: 260 }}
+        minZoomLevel={0.75}
+        maxZoomLevel={1}
         sx={{ px: 3 }}
       />
     </Paper>

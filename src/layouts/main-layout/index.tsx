@@ -43,7 +43,7 @@ const MainLayout = ({ children }: PropsWithChildren) => {
           p: {
             xs: theme.spacing(4, 2),
             sm: theme.spacing(4, 5),
-            lg: theme.spacing(4, 5.5),
+            lg: theme.spacing(4),
           },
           minHeight: '100vh',
           width: { xs: 1, sm: `calc(100% - ${drawerWidth}px)` },

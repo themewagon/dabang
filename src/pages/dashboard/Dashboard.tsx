@@ -12,30 +12,30 @@ import ProductPerformance from 'components/sections/dashboard/product-performanc
 const Dashboard = () => {
   return (
     <Grid container spacing={4}>
-      <Grid item xs={12} xl={7.5}>
+      <Grid item xs={12} xl={7}>
         <Sales />
       </Grid>
-      <Grid item xs={12} xl={4.5}>
+      <Grid item xs={12} xl={5}>
         <VisitorInsights />
       </Grid>
 
-      <Grid item xs={12} xl={5.5}>
+      <Grid item xs={12} xl={6}>
         <TotalRevenue />
       </Grid>
-      <Grid item xs={12} xl={3.25}>
+      <Grid item xs={12} xl={3}>
         <CustomerSatisfaction />
       </Grid>
-      <Grid item xs={12} xl={3.25}>
+      <Grid item xs={12} xl={3}>
         <TargetVsReality />
       </Grid>
 
-      <Grid item xs={12} xl={5.5}>
+      <Grid item xs={12} xl={5}>
         <TopProducts />
       </Grid>
-      <Grid item xs={12} md={6} xl={3.25}>
+      <Grid item xs={12} md={6} xl={4}>
         <SalesMapping />
       </Grid>
-      <Grid item xs={12} md={6} xl={3.25}>
+      <Grid item xs={12} md={6} xl={3}>
         <VolumeVsService />
       </Grid>
 

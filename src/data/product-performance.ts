@@ -1,7 +1,9 @@
 interface ProductPerformanceData {
   id: number;
-  assigned: string;
-  role: string;
+  assigned: {
+    name: string;
+    role: string;
+  };
   name: string;
   priority: 'Low' | 'Medium' | 'High' | 'Critical';
   budget: number;
@@ -10,122 +12,142 @@ interface ProductPerformanceData {
 export const rows: ProductPerformanceData[] = [
   {
     id: 1,
-    assigned: 'Sunil Joshi',
-    role: 'Web Designer',
-    name: 'Elite Admin',
-    priority: 'Low',
-    budget: 3.9,
+    assigned: {
+      name: 'Andrew McDownland',
+      role: 'Project Manager',
+    },
+    name: 'Real Homes WP Theme',
+    priority: 'Medium',
+    budget: 24500,
   },
   {
     id: 2,
-    assigned: 'Andrew McDownland',
-    role: 'Project Manager',
-    name: 'Real Homes WP Theme',
-    priority: 'Medium',
-    budget: 24.5,
+    assigned: {
+      name: 'Sunil Joshi',
+      role: 'Web Designer',
+    },
+    name: 'Elite Admin',
+    priority: 'Low',
+    budget: 3900,
   },
   {
     id: 3,
-    assigned: 'Christopher Jamil',
-    role: 'Project Manager',
+    assigned: {
+      name: 'Christopher Jamil',
+      role: 'Project Manager',
+    },
     name: 'MedicalPro WP Theme',
     priority: 'High',
-    budget: 12.8,
+    budget: 12800,
   },
   {
     id: 4,
-    assigned: 'Nirav Joshi',
-    role: 'Frontend Engineer',
+    assigned: {
+      name: 'Nirav Joshi',
+      role: 'Frontend Engineer',
+    },
     name: 'Hosting Press HTML',
     priority: 'Critical',
-    budget: 2.4,
+    budget: 2400,
   },
   {
     id: 5,
-    assigned: 'Amy Adams',
-    role: 'Backend Developer',
+    assigned: {
+      name: 'Amy Adams',
+      role: 'Backend Developer',
+    },
     name: 'Ecommerce Platform',
     priority: 'High',
-    budget: 15.0,
+    budget: 15000,
   },
   {
     id: 6,
-    assigned: 'John Doe',
-    role: 'Full Stack Developer',
+    assigned: {
+      name: 'John Doe',
+      role: 'Full Stack Developer',
+    },
     name: 'Social Media App',
     priority: 'Medium',
-    budget: 18.5,
+    budget: 18500,
   },
   {
     id: 7,
-    assigned: 'Jane Smith',
-    role: 'UI/UX Designer',
+    assigned: {
+      name: 'Jane Smith',
+      role: 'UI/UX Designer',
+    },
     name: 'Design System',
     priority: 'Low',
-    budget: 8.1,
+    budget: 8100,
   },
   {
     id: 8,
-    assigned: 'Robert Brown',
-    role: 'DevOps Engineer',
+    assigned: {
+      name: 'Robert Brown',
+      role: 'DevOps Engineer',
+    },
     name: 'Cloud Infrastructure',
     priority: 'Critical',
-    budget: 22.3,
+    budget: 22300,
   },
   {
     id: 9,
-    assigned: 'Laura Wilson',
-    role: 'Mobile Developer',
+    assigned: {
+      name: 'Laura Wilson',
+      role: 'Mobile Developer',
+    },
     name: 'Mobile Banking App',
     priority: 'Medium',
-    budget: 19.0,
+    budget: 19000,
   },
   {
     id: 10,
-    assigned: 'James Taylor',
-    role: 'Data Scientist',
+    assigned: {
+      name: 'James Taylor',
+      role: 'Data Scientist',
+    },
     name: 'AI Research Project',
     priority: 'High',
-    budget: 30.2,
+    budget: 30200,
   },
   {
     id: 11,
-    assigned: 'Emily Davis',
-    role: 'QA Engineer',
+    assigned: {
+      name: 'Emily Davis',
+      role: 'QA Engineer',
+    },
     name: 'Testing Automation',
     priority: 'Low',
-    budget: 7.6,
+    budget: 7600,
   },
   {
     id: 12,
-    assigned: 'Michael Miller',
-    role: 'Security Specialist',
+    assigned: {
+      name: 'Michael Miller',
+      role: 'Security Specialist',
+    },
     name: 'Security Enhancement',
     priority: 'Critical',
-    budget: 20.4,
+    budget: 20400,
   },
   {
     id: 13,
-    assigned: 'Sarah White',
-    role: 'Product Manager',
+    assigned: {
+      name: 'Sarah White',
+      role: 'Product Manager',
+    },
     name: 'New Product Launch',
     priority: 'High',
-    budget: 25.0,
+    budget: 2500,
   },
   {
     id: 14,
-    assigned: 'Daniel Lee',
-    role: 'Frontend Developer',
+    assigned: {
+      name: 'Daniel Lee',
+      role: 'Frontend Developer',
+    },
     name: 'Marketing Website',
     priority: 'Medium',
-    budget: 9.9,
-  },
-  {
-    id: 15,
-    assigned: 'Grace Kim',
-    role: 'Content Strategist',
-    name: 'Content Management',
-    priority: 'Low',
-    budget: 4.7,
+    budget: 9900,
   },
 ];

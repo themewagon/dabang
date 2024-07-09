@@ -23,19 +23,11 @@ import Chip from './components/Chip';
 import DataGrid from './components/Datagrid';
 import PaginationItem from './components/PaginationItem';
 import OutlinedInput from './components/OutlinedInput';
+import TableBody from './components/TableBody';
 
 export const theme = createTheme({
   palette,
   typography,
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1200,
-      xl: 1680,
-    },
-  },
   mixins: {
     toolbar: {
       minHeight: 120,
@@ -61,6 +53,7 @@ export const theme = createTheme({
 
     MuiMenuItem: MenuItem,
 
+    MuiTableBody: TableBody,
     MuiTableCell: TableCell,
     MuiCssBaseline: CssBaseline,
     MuiLink: Link,

@@ -30,6 +30,8 @@ interface SalesMappingChartProps {
     height?: number;
     width?: number;
   };
+  minZoomLevel: number;
+  maxZoomLevel: number;
   sx?: SxProps;
 }
 
@@ -37,7 +39,9 @@ const SalesMappingChart = ({
   salesMappingChartRef,
   data,
   style,
-  ...rest
+  minZoomLevel,
+  maxZoomLevel,
+  ...props
 }: SalesMappingChartProps) => {
   const theme = useTheme();
 
@@ -60,6 +64,10 @@ const SalesMappingChart = ({
           map: 'world',
           data,
           roam: true,
+          scaleLimit: {
+            min: minZoomLevel,
+            max: maxZoomLevel,
+          },
           left: 0,
           right: 0,
           label: {
@@ -87,7 +95,7 @@ const SalesMappingChart = ({
       option={salesMappingChartOption}
       ref={salesMappingChartRef}
       style={style}
-      {...rest}
+      {...props}
     />
   );
 };

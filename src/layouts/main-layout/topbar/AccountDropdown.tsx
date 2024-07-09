@@ -93,7 +93,7 @@ const AccountDropdown = () => {
             </Typography>
             <IconifyIcon icon="ph:caret-down-bold" fontSize={16} color="primary.darker" />
           </Stack>
-          <Typography variant="subtitle2" textAlign="left" color="primary.light">
+          <Typography variant="subtitle2" textAlign="left" color="primary.lighter">
             Admin
           </Typography>
         </Box>

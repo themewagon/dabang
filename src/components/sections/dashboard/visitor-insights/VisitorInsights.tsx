@@ -9,9 +9,9 @@ const VisitorInsights = () => {
   const chartRef = useRef<EChartsReactCore | null>(null);
 
   const [legend, setLegend] = useState({
-    'Loyal Customers': false,
-    'New Customers': false,
-    'Unique Customers': false,
+    'loyal customers': false,
+    'new customers': false,
+    'unique customers': false,
   });
 
   const handleLegendToggle = (name: keyof typeof legend) => {

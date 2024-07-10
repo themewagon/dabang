@@ -29,12 +29,13 @@ const TotalRevenue = () => {
   };
 
   return (
-    <Paper sx={{ pt: 3.125, px: 3.5, pb: 3.5 }}>
+    // <Paper sx={{ pt: 3.125, px: 3.5, pb: 3.5 }}>
+    <Paper sx={{ p: 3 }}>
       <Typography variant="h4" mb={3}>
         Total Revenue
       </Typography>
 
-      <TotalRevenueChart chartRef={chartRef} data={totalRevenue} style={{ height: 190 }} />
+      <TotalRevenueChart chartRef={chartRef} data={totalRevenue} style={{ height: 195 }} />
 
       <Stack direction="row" justifyContent="center" gap={1} mt={3}>
         <LegendToggleButton

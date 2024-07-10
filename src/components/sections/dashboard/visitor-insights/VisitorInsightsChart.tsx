@@ -31,9 +31,9 @@ type EChartsOption = echarts.ComposeOption<
 interface VisitorInsightsChartProps {
   chartRef: MutableRefObject<EChartsReactCore | null>;
   data: {
-    'Loyal Customers': number[];
-    'New Customers': number[];
-    'Unique Customers': number[];
+    'loyal customers': number[];
+    'new customers': number[];
+    'unique customers': number[];
   };
   style?: {
     height: number;
@@ -107,7 +107,7 @@ const VisitorInsightsChart = ({ chartRef, data, style }: VisitorInsightsChartPro
         {
           name: 'Loyal Customers',
           type: 'line',
-          data: data['Loyal Customers'],
+          data: data['loyal customers'],
           smooth: true,
           // smoothMonotone: 'x',
           symbol: 'circle',
@@ -121,7 +121,7 @@ const VisitorInsightsChart = ({ chartRef, data, style }: VisitorInsightsChartPro
         {
           name: 'New Customers',
           type: 'line',
-          data: data['New Customers'],
+          data: data['new customers'],
           smooth: true,
           // smoothMonotone:'x',
           symbol: 'circle',
@@ -134,7 +134,7 @@ const VisitorInsightsChart = ({ chartRef, data, style }: VisitorInsightsChartPro
         {
           name: 'Unique Customers',
           type: 'line',
-          data: data['Unique Customers'],
+          data: data['unique customers'],
           smooth: true,
           // smoothMonotone:'x',
           symbol: 'circle',

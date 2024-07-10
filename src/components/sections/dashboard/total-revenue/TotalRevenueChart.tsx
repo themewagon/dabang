@@ -43,9 +43,9 @@ const TotalRevenueChart = ({ chartRef, data, style }: TotalRevenueChartProps) =>
         confine: true,
       },
 
-      legend: {
-        show: false,
-      },
+      // legend: {
+      //   show: false,
+      // },
 
       xAxis: {
         data: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],

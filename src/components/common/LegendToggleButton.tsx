@@ -1,4 +1,4 @@
-import { Button, SvgIconProps, Typography } from '@mui/material';
+import { Button, Stack, SvgIconProps, Typography } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 
 interface Legend {
@@ -10,8 +10,7 @@ interface LegendToggleButtonProps {
   icon?: string;
   svgIcon?: (props: SvgIconProps) => JSX.Element;
   color: string;
-  // value?: string;
-  // currency?: boolean;
+  value?: string;
   legend: Legend;
   onHandleLegendToggle: (name: keyof Legend) => void;
 }
@@ -21,9 +20,8 @@ const LegendToggleButton = ({
   icon,
   svgIcon: SvgIcon,
   color,
+  value,
   legend,
-  // value,
-  // currency,
   onHandleLegendToggle,
 }: LegendToggleButtonProps) => {
   const Icon = icon ? (
@@ -33,17 +31,24 @@ const LegendToggleButton = ({
   ) : null;
 
   return (
-    <Button
-      size="small"
-      startIcon={Icon}
-      onClick={() => onHandleLegendToggle(name)}
-      sx={{ opacity: legend[name] ? 0.5 : 1, '&:hover': { bgcolor: 'transparent' } }}
-      disableRipple
-    >
-      <Typography variant="button" whiteSpace="nowrap" alignSelf="end" sx={{ color: 'grey.200' }}>
-        {name}
-      </Typography>
-    </Button>
+    <Stack>
+      <Button
+        size="small"
+        startIcon={Icon}
+        onClick={() => onHandleLegendToggle(name)}
+        sx={{ opacity: legend[name] ? 0.5 : 1, '&:hover': { bgcolor: 'transparent' } }}
+        disableRipple
+      >
+        <Typography variant="button" whiteSpace="nowrap" alignSelf="end" sx={{ color: 'grey.200' }}>
+          {name}
+        </Typography>
+      </Button>
+      {value && (
+        <Typography variant="subtitle2" sx={{ height: 20, ml: 4, fontWeight: 'fontWeightMedium' }}>
+          {value}
+        </Typography>
+      )}
+    </Stack>
   );
 };
 

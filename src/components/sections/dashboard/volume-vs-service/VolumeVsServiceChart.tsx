@@ -22,8 +22,8 @@ type EChartsOption = echarts.ComposeOption<
 interface VolumeVsServiceChartProps {
   chartRef: MutableRefObject<EChartsReactCore | null>;
   data: {
-    Volume: number[];
-    Services: number[];
+    volume: number[];
+    services: number[];
   };
   style?: {
     height: number;
@@ -49,6 +49,7 @@ const VolumeVsServiceChart = ({ chartRef, data, style, ...rest }: VolumeVsServic
       xAxis: {
         show: false,
         data: ['', '', '', '', '', '', ''],
+        boundaryGap: false,
       },
 
       yAxis: {
@@ -59,7 +60,8 @@ const VolumeVsServiceChart = ({ chartRef, data, style, ...rest }: VolumeVsServic
       grid: {
         top: 0,
         bottom: 0,
-        left: 0,
+        left: -20,
+        right: 10,
         containLabel: true,
       },
 
@@ -67,7 +69,7 @@ const VolumeVsServiceChart = ({ chartRef, data, style, ...rest }: VolumeVsServic
         {
           name: 'Services',
           type: 'bar',
-          data: data.Services,
+          data: data.services,
           itemStyle: {
             borderRadius: 2,
           },
@@ -78,7 +80,7 @@ const VolumeVsServiceChart = ({ chartRef, data, style, ...rest }: VolumeVsServic
         {
           name: 'Volume',
           type: 'bar',
-          data: data.Volume,
+          data: data.volume,
           itemStyle: {
             borderRadius: 2,
           },

@@ -13,8 +13,8 @@ import TopProduct from './TopProduct';
 
 const TopProducts = () => {
   return (
-    <Paper sx={{ pt: 2.875 }}>
-      <Typography variant="h4" color="primary.dark" pl={3.25} mb={1.75}>
+    <Paper sx={{ pt: 3 }}>
+      <Typography variant="h4" color="primary.dark" px={3} mb={1.25}>
         Top Products
       </Typography>
 

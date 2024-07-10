@@ -9,8 +9,8 @@ const SalesMapping = () => {
   const salesMappingData = getSalesMappingData();
 
   return (
-    <Paper sx={{ py: 3 }}>
-      <Typography variant="h4" color="primary.dark" mb={1.375} pl={3}>
+    <Paper sx={{ p: 3 }}>
+      <Typography variant="h4" color="primary.dark" mb={1.375}>
         Sales Mapping by Country
       </Typography>
 
@@ -19,7 +19,7 @@ const SalesMapping = () => {
         data={salesMappingData}
         style={{ height: 260 }}
         minZoomLevel={0.75}
-        maxZoomLevel={1}
+        maxZoomLevel={1.1}
         sx={{ px: 3 }}
       />
     </Paper>

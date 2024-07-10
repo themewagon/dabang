@@ -31,8 +31,8 @@ type EChartsOption = echarts.ComposeOption<
 interface CustomerSatisfactionChart {
   chartRef: MutableRefObject<EChartsReactCore | null>;
   data: {
-    'Last Month': number[];
-    'This Month': number[];
+    'last month': number[];
+    'this month': number[];
   };
   style?: {
     height?: number;
@@ -47,8 +47,8 @@ const CustomerSatisfactionChart = ({ chartRef, data, style }: CustomerSatisfacti
     const option: EChartsOption = {
       color: [theme.palette.info.main, theme.palette.success.dark],
       tooltip: {
-        // trigger: 'axis',
-        show: false,
+        trigger: 'item',
+        show: true,
       },
 
       legend: {
@@ -67,7 +67,7 @@ const CustomerSatisfactionChart = ({ chartRef, data, style }: CustomerSatisfacti
         {
           type: 'category',
           boundaryGap: false,
-          // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
           show: false,
         },
       ],
@@ -99,7 +99,7 @@ const CustomerSatisfactionChart = ({ chartRef, data, style }: CustomerSatisfacti
           emphasis: {
             focus: 'series',
           },
-          data: data['Last Month'],
+          data: data['last month'],
           symbol: 'circle',
           symbolSize: 8,
         },
@@ -123,7 +123,7 @@ const CustomerSatisfactionChart = ({ chartRef, data, style }: CustomerSatisfacti
           emphasis: {
             focus: 'series',
           },
-          data: data['This Month'],
+          data: data['this month'],
           symbol: 'circle',
           symbolSize: 8,
         },

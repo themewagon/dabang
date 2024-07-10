@@ -12,3 +12,7 @@ export const currencyFormat = (amount: number, options: Intl.NumberFormatOptions
     ...options,
   }).format(amount);
 };
+
+export const getTotal = (data: number[]) => {
+  return data.reduce((total, current) => total + current, 0);
+};

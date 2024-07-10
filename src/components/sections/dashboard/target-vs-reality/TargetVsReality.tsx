@@ -5,12 +5,13 @@ import { salesData, targetVsReality } from 'data/target-vs-reality';
 
 const TargetVsReality = () => {
   return (
-    <Paper sx={{ pt: 3.125, px: 2.375, pb: 2.625 }}>
-      <Typography variant="h4" color="primary.dark" mb={1.375}>
+    // <Paper sx={{ pt: 3.125, px: 2.375, pb: 2.625 }}>
+    <Paper sx={{ p: 3 }}>
+      <Typography variant="h4" color="primary.dark" mb={1.25}>
         Target vs Reality
       </Typography>
 
-      <TargetVsRealityChart style={{ height: 151 }} data={targetVsReality} />
+      <TargetVsRealityChart style={{ height: 150 }} data={targetVsReality} />
 
       <Stack mt={2.25} spacing={1.875}>
         {salesData.map((item) => (

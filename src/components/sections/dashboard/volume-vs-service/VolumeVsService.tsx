@@ -1,54 +1,23 @@
 import { Divider, Paper, Stack, Typography } from '@mui/material';
-import { useEffect, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import VolumeVsServiceChart from './VolumeVsServiceChart';
-import { CallbackDataParams } from 'echarts/types/src/util/types.js';
 import { volumeVsService } from 'data/volume-vs-service';
-import LegendToggleButtonWithValue from '../../../common/LegendToggleButtonWithValue';
+import { getTotal, numberFormat } from 'helpers/utils';
+import LegendToggleButton from 'components/common/LegendToggleButton';
 
 const VolumeVsService = () => {
   const chartRef = useRef<EChartsReactCore | null>(null);
-
-  const [volume, setVolume] = useState<string>('');
-  const [services, setServices] = useState<string>('');
   const [legend, setLegend] = useState({
-    Volume: false,
-    Services: false,
+    volume: false,
+    services: false,
   });
 
-  useEffect(() => {
-    if (chartRef.current) {
-      const instance = chartRef.current.getEchartsInstance();
-
-      const handleMouseOver = (params: CallbackDataParams) => {
-        if (params.seriesIndex === 0) {
-          setServices(params?.value?.toString() || '');
-          // setServices(params?.value!.toString());
-        } else {
-          setVolume(params?.value?.toString() || '');
-        }
-      };
-
-      const handleMouseOut = (params: CallbackDataParams) => {
-        if (params.seriesIndex === 0) {
-          setServices('');
-        } else {
-          setVolume('');
-        }
-      };
-
-      instance.on('mouseover', handleMouseOver);
-      instance.on('mouseout', handleMouseOut);
-
-      // return () => {
-      //   instance.off('mouseover', handleMouseOver);
-      //   instance.off('mouseout', handleMouseOut);
-      //   if (chartRef.current) {
-      //     instance.dispose();
-      //   }
-      // };
-    }
-  }, []);
+  const totalVolume = useMemo(() => getTotal(volumeVsService.volume), [volumeVsService.volume]);
+  const totalServices = useMemo(
+    () => getTotal(volumeVsService.services),
+    [volumeVsService.services],
+  );
 
   const handleLegendToggle = (name: keyof typeof legend) => {
     setLegend((prevState) => ({
@@ -66,15 +35,16 @@ const VolumeVsService = () => {
   };
 
   return (
-    <Paper sx={{ pt: 3.125, pb: 1.875 }}>
-      <Typography variant="h4" color="primary.dark" mb={3} pl={3}>
+    // <Paper sx={{ pt: 3.125, pb: 1.875 }}>
+    <Paper sx={{ p: 3 }}>
+      <Typography variant="h4" color="primary.dark" mb={3}>
         Volume vs Service
       </Typography>
 
       <VolumeVsServiceChart
         chartRef={chartRef}
         data={volumeVsService}
-        style={{ height: 190 }}
+        style={{ height: 182 }}
         sx={{ pb: 1 }}
       />
 
@@ -85,21 +55,19 @@ const VolumeVsService = () => {
         sx={{ borderTop: 1, borderColor: 'grey.A100', pt: 2 }}
         gap={2.5}
       >
-        <LegendToggleButtonWithValue
+        <LegendToggleButton
           name="Volume"
           icon="codicon:circle-filled"
+          value={numberFormat(totalVolume)}
           color="info.main"
-          value={volume}
-          currency={false}
           legend={legend}
           onHandleLegendToggle={handleLegendToggle}
         />
-        <LegendToggleButtonWithValue
+        <LegendToggleButton
           name="Services"
           icon="codicon:circle-filled"
+          value={numberFormat(totalServices)}
           color="success.main"
-          value={services}
-          currency={false}
           legend={legend}
           onHandleLegendToggle={handleLegendToggle}
         />

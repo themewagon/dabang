@@ -1,4 +1,4 @@
-import Background from 'assets/Background.png';
+import Background from 'assets/Background.webp';
 import LogoPro from 'components/icons/LogoPro';
 import { Card, CardContent, Typography, Button, Stack } from '@mui/material';
 

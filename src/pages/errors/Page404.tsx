@@ -1,6 +1,6 @@
 import { Button, Link, Stack, Typography } from '@mui/material';
 import Image from 'components/base/Image';
-import errorImg from 'assets/404-page.svg';
+import errorImg from 'assets/404-page.webp';
 
 const Page404 = () => {
   return (

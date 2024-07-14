@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import { MouseEvent, useState } from 'react';
-import Profile from 'assets/Profile.svg';
+import Profile from 'assets/Profile.webp';
 
 interface MenuItem {
   id: number;

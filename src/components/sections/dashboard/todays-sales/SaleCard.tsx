@@ -40,7 +40,7 @@ const SaleCard = ({ item }: { item: SaleItem }) => {
           {label}
         </Typography>
         <Typography variant="caption" color="text.secondary" component="p">
-          {growth}
+          Last day {growth}
         </Typography>
       </CardContent>
     </Card>

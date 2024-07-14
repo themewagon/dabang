@@ -15,17 +15,17 @@ const Dashboard = () => {
       <Grid item xs={12} xl={7}>
         <Sales />
       </Grid>
-      <Grid item xs={12} xl={5}>
+      <Grid item xs={12} md={7} xl={5}>
         <VisitorInsights />
       </Grid>
 
-      <Grid item xs={12} xl={6}>
+      <Grid item xs={12} md={5} xl={6}>
         <TotalRevenue />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} md={7} xl={3}>
         <CustomerSatisfaction />
       </Grid>
-      <Grid item xs={12} xl={3}>
+      <Grid item xs={12} md={5} xl={3}>
         <TargetVsReality />
       </Grid>
 

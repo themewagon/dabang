@@ -40,7 +40,7 @@ export const sales: SaleItem[] = [
   {
     label: 'Customers',
     value: '8',
-    growth: '0.5%',
+    growth: '+0.5%',
     bgColor: 'secondary.lighter',
     iconBackgroundColor: 'secondary.main',
     icon: 'material-symbols:person-add',

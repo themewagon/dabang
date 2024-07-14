@@ -21,7 +21,7 @@ const NavCard = () => {
             variant="contained"
             sx={{
               mt: 3.75,
-              width: 136,
+              px: 5,
               color: 'primary.main',
               bgcolor: 'background.default',
               '&:hover': {

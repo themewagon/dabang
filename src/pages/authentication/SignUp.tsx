@@ -39,8 +39,8 @@ const SignUp = () => {
           <Typography variant="h3">Sign up</Typography>
           <Typography variant="subtitle2" color="neutral.main">
             Have an account?{' '}
-            <Link href={paths.login} underline="hover">
-              Login
+            <Link href={paths.signin} underline="hover">
+              Sign in
             </Link>
           </Typography>
         </Stack>

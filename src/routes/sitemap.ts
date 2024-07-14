@@ -31,9 +31,9 @@ const sitemap: MenuItem[] = [
     items: [
       {
         id: 10,
-        name: 'Login',
-        path: paths.login,
-        pathName: 'login',
+        name: 'Sign in',
+        path: paths.signin,
+        pathName: 'sign-in',
         active: true,
       },
       {

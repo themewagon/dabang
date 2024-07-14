@@ -20,7 +20,7 @@ import paths from 'routes/paths';
 
 const checkBoxLabel = { inputProps: { 'aria-label': 'Checkbox' } };
 
-const Login = () => {
+const SignIn = () => {
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
   };
@@ -36,7 +36,7 @@ const Login = () => {
           justifyContent="space-between"
           spacing={1}
         >
-          <Typography variant="h3">Log in</Typography>
+          <Typography variant="h3">Sign in</Typography>
           <Typography variant="subtitle2" color="neutral.main">
             or{' '}
             <Link href={paths.signup} underline="hover">
@@ -87,11 +87,11 @@ const Login = () => {
           </Stack>
 
           <Button type="submit" size="large" variant="contained" sx={{ mt: 2 }} fullWidth>
-            Log in
+            Sign in
           </Button>
 
           <Divider sx={{ color: 'neutral.main', my: 2 }}>
-            <Typography variant="subtitle2"> or log in with</Typography>
+            <Typography variant="subtitle2"> or sign in with</Typography>
           </Divider>
 
           <Grid container spacing={2}>
@@ -124,4 +124,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignIn;

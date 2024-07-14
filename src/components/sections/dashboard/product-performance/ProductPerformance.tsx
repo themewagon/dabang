@@ -1,4 +1,4 @@
-import { Box, Chip, Paper, Stack, Typography } from '@mui/material';
+import { Box, Chip, Link, Paper, Stack, Typography } from '@mui/material';
 import { DataGrid, GridColDef, useGridApiRef } from '@mui/x-data-grid';
 import CustomPagination from 'components/common/CustomPagination';
 import SearchFilter from 'components/common/SearchFilter';
@@ -15,7 +15,15 @@ const columns: GridColDef<(typeof rows)[number]>[] = [
     renderCell: (params) => {
       return (
         <Stack justifyContent="center" height={1}>
-          <Typography variant="h6">{params.row.assigned.name}</Typography>
+          <Typography
+            variant="h6"
+            component={Link}
+            href="#!"
+            color="text.primary"
+            sx={{ width: 'max-content' }}
+          >
+            {params.row.assigned.name}
+          </Typography>
           <Typography variant="subtitle2">{params.row.assigned.role}</Typography>
         </Stack>
       );
@@ -97,7 +105,6 @@ const ProductPerformance = () => {
               },
             },
           }}
-          pageSizeOptions={[5]}
         />
       </Box>
       <CustomPagination apiRef={apiRef} />

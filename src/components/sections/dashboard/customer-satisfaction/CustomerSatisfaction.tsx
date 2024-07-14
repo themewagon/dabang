@@ -39,7 +39,6 @@ const CustomerSatisfaction = () => {
   };
 
   return (
-    // <Paper sx={{ pt: 3, px: 1.375, pb: 2 }}>
     <Paper sx={{ py: 3, px: 1.5 }}>
       <Typography variant="h4" color="primary.dark" mb={3}>
         Customer Satisfaction

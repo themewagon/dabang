@@ -5,7 +5,6 @@ import { salesData, targetVsReality } from 'data/target-vs-reality';
 
 const TargetVsReality = () => {
   return (
-    // <Paper sx={{ pt: 3.125, px: 2.375, pb: 2.625 }}>
     <Paper sx={{ p: 3 }}>
       <Typography variant="h4" color="primary.dark" mb={1.25}>
         Target vs Reality
@@ -49,7 +48,7 @@ const TargetVsReality = () => {
               sx={{
                 fontWeight: 'fontWeightMedium',
                 color: item.color,
-                ml: { xs: 10, sm: 30, xl: 9.125 },
+                ml: { xs: 10, sm: 30, md: 10, xl: 5 },
               }}
             >
               {item.value}

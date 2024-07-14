@@ -1,6 +1,4 @@
 import * as echarts from 'echarts/core';
-import ReactEchart from 'components/base/ReactEhart';
-
 import {
   TooltipComponent,
   TooltipComponentOption,
@@ -11,31 +9,35 @@ import {
 } from 'echarts/components';
 import { BarChart, BarSeriesOption } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
-import { MutableRefObject, useMemo } from 'react';
-import EChartsReactCore from 'echarts-for-react/lib/core';
 import { useTheme } from '@mui/material';
+import { useMemo } from 'react';
+import ReactEchart from 'components/base/ReactEhart';
+import { useBreakpoints } from 'providers/BreakpointsProvider';
 
 echarts.use([TooltipComponent, GridComponent, LegendComponent, BarChart, CanvasRenderer]);
+
 type EChartsOption = echarts.ComposeOption<
   TooltipComponentOption | GridComponentOption | LegendComponentOption | BarSeriesOption
 >;
 
 interface TotalRevenueChartProps {
-  chartRef: MutableRefObject<EChartsReactCore | null>;
   data: {
     'Online Sales': number[];
     'Offline Sales': number[];
   };
   style?: {
-    height: number;
+    height?: number;
     width?: number;
   };
 }
 
-const TotalRevenueChart = ({ chartRef, data, style }: TotalRevenueChartProps) => {
+const TotalRevenueChart = ({ data, style }: TotalRevenueChartProps) => {
   const theme = useTheme();
+  const { up } = useBreakpoints();
 
-  const option: EChartsOption = useMemo(() => {
+  const isSm = up('sm');
+
+  const totalRevenueChartOption: EChartsOption = useMemo(() => {
     return {
       color: [theme.palette.info.main, theme.palette.success.main],
 
@@ -43,9 +45,17 @@ const TotalRevenueChart = ({ chartRef, data, style }: TotalRevenueChartProps) =>
         confine: true,
       },
 
-      // legend: {
-      //   show: false,
-      // },
+      legend: {
+        data: ['Online Sales', 'Offline Sales'],
+        left: 'center',
+        bottom: 0,
+        icon: 'circle',
+        textStyle: {
+          fontFamily: theme.typography.body2.fontFamily,
+        },
+        itemGap: isSm ? 20 : 10,
+        itemHeight: 11,
+      },
 
       xAxis: {
         data: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -65,7 +75,6 @@ const TotalRevenueChart = ({ chartRef, data, style }: TotalRevenueChartProps) =>
       yAxis: {
         type: 'value',
         axisLabel: {
-          // fontFamily: 'Poppins',
           fontSize: theme.typography.fontSize - 2,
           color: theme.palette.grey.A200,
           formatter: '{value}k',
@@ -83,7 +92,7 @@ const TotalRevenueChart = ({ chartRef, data, style }: TotalRevenueChartProps) =>
         top: '4%',
         left: 0,
         right: 6,
-        bottom: 0,
+        bottom: 45,
         containLabel: true,
       },
 
@@ -108,9 +117,9 @@ const TotalRevenueChart = ({ chartRef, data, style }: TotalRevenueChartProps) =>
         },
       ],
     };
-  }, [theme, data]);
+  }, [theme, data, isSm]);
 
-  return <ReactEchart echarts={echarts} option={option} ref={chartRef} style={style} />;
+  return <ReactEchart echarts={echarts} option={totalRevenueChartOption} style={style} />;
 };
 
 export default TotalRevenueChart;

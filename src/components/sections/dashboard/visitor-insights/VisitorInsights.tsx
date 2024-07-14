@@ -46,9 +46,9 @@ const VisitorInsights = () => {
         justifyContent="center"
         alignItems="flex-start"
         mt={4}
-        pl={3}
+        px={{ xs: 0, sm: 1, lg: 0 }}
         rowGap={1}
-        columnGap={2}
+        columnGap={{ sm: 1, md: 0.5, lg: 1, xl: 0.5 }}
       >
         <LegendToggleButton
           name="Loyal Customers"

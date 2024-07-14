@@ -20,7 +20,7 @@ const Sales = () => {
         </Button>
       </Stack>
 
-      <Grid container spacing={{ xs: 3.875, xl: 2 }} columns={{ xs: 1, sm: 2, lg: 4 }}>
+      <Grid container spacing={{ xs: 3.875, xl: 2 }} columns={{ xs: 1, sm: 2, md: 4 }}>
         {sales.map((item) => (
           <Grid item xs={1} key={item.label}>
             <SaleCard item={item} />

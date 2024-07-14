@@ -4,6 +4,8 @@ import {
   gridPageCountSelector,
   useGridSelector,
   gridPageSizeSelector,
+  gridPaginationRowRangeSelector,
+  gridExpandedRowCountSelector,
 } from '@mui/x-data-grid';
 import { GridApiCommunity } from '@mui/x-data-grid/internals';
 import { MutableRefObject } from 'react';
@@ -12,7 +14,15 @@ const CustomPagination = ({ apiRef }: { apiRef: MutableRefObject<GridApiCommunit
   const page = useGridSelector(apiRef, gridPageSelector);
   const pageCount = useGridSelector(apiRef, gridPageCountSelector);
   const pageSize = useGridSelector(apiRef, gridPageSizeSelector);
-  const rowsCount = apiRef.current.getRowsCount();
+  const filteredRows = useGridSelector(apiRef, gridExpandedRowCountSelector);
+  const paginationRowRange = useGridSelector(apiRef, gridPaginationRowRangeSelector);
+
+  const from = paginationRowRange ? page * pageSize + 1 : 0;
+  const to = paginationRowRange
+    ? page + 1 === pageCount
+      ? paginationRowRange.lastRowIndex + 1
+      : page * pageSize + pageSize
+    : 0;
 
   return (
     <Stack
@@ -23,7 +33,7 @@ const CustomPagination = ({ apiRef }: { apiRef: MutableRefObject<GridApiCommunit
       sx={{ width: 1, overflow: 'auto' }}
     >
       <Typography variant="subtitle2" color="grey.600">
-        Showing {`${page * pageSize + 1}-${page * pageSize + pageSize} of ${rowsCount}`}
+        {`Showing ${from}-${to} of ${filteredRows}`}
       </Typography>
       <Pagination
         color="primary"

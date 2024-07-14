@@ -36,9 +36,7 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
     cell: ({ theme }) => ({
       fontFamily: theme.typography.body1.fontFamily,
       fontSize: theme.typography.fontSize,
-      '&:focus': {
-        outline: 'none',
-      },
+      '&:focus-within': { outline: 'none' },
     }),
 
     columnSeparator: {
@@ -47,6 +45,11 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
 
     sortIcon: ({ theme }) => ({
       color: theme.palette.primary.main,
+    }),
+
+    overlay: ({ theme }) => ({
+      fontFamily: theme.typography.body1.fontFamily,
+      fontSize: theme.typography.body1.fontSize,
     }),
   },
 };

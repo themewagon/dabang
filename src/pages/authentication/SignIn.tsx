@@ -13,7 +13,8 @@ import {
   Typography,
 } from '@mui/material';
 import { SyntheticEvent } from 'react';
-import paths from 'routes/paths';
+import { useNavigate } from 'react-router-dom';
+import paths, { rootPaths } from 'routes/paths';
 import LogoHeader from 'layouts/main-layout/sidebar/LogoHeader';
 import IconifyIcon from 'components/base/IconifyIcon';
 import PasswordTextField from 'components/common/PasswordTextField';
@@ -21,8 +22,10 @@ import PasswordTextField from 'components/common/PasswordTextField';
 const checkBoxLabel = { inputProps: { 'aria-label': 'Checkbox' } };
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
+    navigate(rootPaths.root);
   };
 
   return (

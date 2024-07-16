@@ -1,3 +1,5 @@
+import { useTheme } from '@mui/material';
+import { useMemo } from 'react';
 import * as echarts from 'echarts/core';
 import {
   TooltipComponent,
@@ -8,8 +10,6 @@ import {
 import { BarChart, BarSeriesOption } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
 import ReactEchart from 'components/base/ReactEhart';
-import { useMemo } from 'react';
-import { useTheme } from '@mui/material';
 
 echarts.use([TooltipComponent, GridComponent, BarChart, CanvasRenderer]);
 

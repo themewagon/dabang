@@ -1,7 +1,7 @@
 import { AppBar, IconButton, Link, Stack, Toolbar, Typography } from '@mui/material';
-import { rootPaths } from 'routes/paths';
-import { useLocation } from 'react-router-dom';
 import { useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
+import { rootPaths } from 'routes/paths';
 import sitemap from 'routes/sitemap';
 import Logo from 'components/icons/Logo';
 import IconifyIcon from 'components/base/IconifyIcon';

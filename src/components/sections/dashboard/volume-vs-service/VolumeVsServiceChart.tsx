@@ -1,3 +1,5 @@
+import { SxProps, useTheme } from '@mui/material';
+import { MutableRefObject, useMemo } from 'react';
 import * as echarts from 'echarts/core';
 import {
   TooltipComponent,
@@ -8,10 +10,8 @@ import {
 } from 'echarts/components';
 import { BarChart, BarSeriesOption } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
-import { MutableRefObject, useMemo } from 'react';
-import ReactEchart from 'components/base/ReactEhart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import { SxProps, useTheme } from '@mui/material';
+import ReactEchart from 'components/base/ReactEhart';
 
 echarts.use([TooltipComponent, GridComponent, LegendComponent, BarChart, CanvasRenderer]);
 

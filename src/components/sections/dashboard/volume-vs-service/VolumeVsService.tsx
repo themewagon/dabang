@@ -1,10 +1,10 @@
 import { Divider, Paper, Stack, Typography } from '@mui/material';
 import { useMemo, useRef, useState } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import VolumeVsServiceChart from './VolumeVsServiceChart';
 import { volumeVsService } from 'data/volume-vs-service';
 import { getTotal, numberFormat } from 'helpers/utils';
 import LegendToggleButton from 'components/common/LegendToggleButton';
+import VolumeVsServiceChart from './VolumeVsServiceChart';
 
 const VolumeVsService = () => {
   const chartRef = useRef<EChartsReactCore | null>(null);

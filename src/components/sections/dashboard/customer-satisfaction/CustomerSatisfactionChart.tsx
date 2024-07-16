@@ -1,3 +1,4 @@
+import { alpha, useTheme } from '@mui/material';
 import * as echarts from 'echarts/core';
 import {
   TooltipComponent,
@@ -13,7 +14,6 @@ import { CanvasRenderer } from 'echarts/renderers';
 import { MutableRefObject, useMemo } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import ReactEchart from 'components/base/ReactEhart';
-import { alpha, useTheme } from '@mui/material';
 
 echarts.use([
   TooltipComponent,

@@ -8,9 +8,9 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import IconifyIcon from 'components/base/IconifyIcon';
 import { MouseEvent, useState } from 'react';
 import Profile from 'assets/Profile.webp';
+import IconifyIcon from 'components/base/IconifyIcon';
 
 interface MenuItem {
   id: number;

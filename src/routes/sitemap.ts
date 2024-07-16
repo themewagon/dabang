@@ -1,6 +1,6 @@
-import DashboardIcon from 'components/icons/DashboardIcon';
-import paths, { rootPaths } from './paths';
 import { SvgIconProps } from '@mui/material';
+import paths, { rootPaths } from './paths';
+import DashboardIcon from 'components/icons/DashboardIcon';
 
 export interface MenuItem {
   id: number;

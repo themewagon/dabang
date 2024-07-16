@@ -1,9 +1,9 @@
 import { Paper, Stack, Typography } from '@mui/material';
-import VisitorInsightsChart from './VisitorInsightsChart';
 import { useRef, useState } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { visitorInsightsData } from 'data/visitor-insights-data';
 import LegendToggleButton from 'components/common/LegendToggleButton';
+import VisitorInsightsChart from './VisitorInsightsChart';
 
 const VisitorInsights = () => {
   const chartRef = useRef<EChartsReactCore | null>(null);

@@ -1,9 +1,9 @@
 import { Box, Chip, Link, Paper, Stack, Typography } from '@mui/material';
 import { DataGrid, GridColDef, useGridApiRef } from '@mui/x-data-grid';
-import CustomPagination from 'components/common/CustomPagination';
-import SearchFilter from 'components/common/SearchFilter';
 import { rows } from 'data/product-performance';
 import { currencyFormat } from 'helpers/utils';
+import CustomPagination from 'components/common/CustomPagination';
+import SearchFilter from 'components/common/SearchFilter';
 
 const columns: GridColDef<(typeof rows)[number]>[] = [
   {

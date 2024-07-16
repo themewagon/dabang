@@ -1,5 +1,5 @@
 export const grey = {
-  50: '#F7FAFC', //used
+  50: '#F7FAFC',
   100: '#374557',
   200: '#464E5F',
   300: '#F9FAFB',
@@ -33,7 +33,7 @@ export const blue = {
 
 export const purple = {
   50: '#F3E8FF',
-  300: '#8950FC', // would be used in sales mapping
+  300: '#8950FC',
   500: '#BF83FF',
   700: '#884DFF',
   900: '#A700FF',
@@ -44,7 +44,7 @@ export const red = {
   300: '#EB5757',
   500: '#FA5A7D',
   700: '#FF947A',
-  800: '#F64E60', // would be used in sales mapping
+  800: '#F64E60',
   900: '#EF4444',
 };
 export const orange = {
@@ -68,5 +68,5 @@ export const green = {
 };
 
 export const yellow = {
-  500: '#FFCF00', // would be used in TargetVsRealityChart
+  500: '#FFCF00',
 };

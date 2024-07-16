@@ -32,7 +32,6 @@ const palette: PaletteOptions = {
   text: {
     primary: indigo[600],
     secondary: indigo[200],
-    // disabled: grey[400],
   },
 
   action: {
@@ -41,8 +40,8 @@ const palette: PaletteOptions = {
   },
 
   neutral: {
-    lighter: grey[50], //used
-    light: grey[300], // This is used
+    lighter: grey[50],
+    light: grey[300],
     main: grey[500],
     dark: grey[700],
     darker: grey[900],

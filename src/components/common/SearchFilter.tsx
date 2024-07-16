@@ -1,7 +1,7 @@
 import { SxProps, TextField } from '@mui/material';
 import { GridApiCommunity } from '@mui/x-data-grid/internals';
-import IconifyIcon from 'components/base/IconifyIcon';
 import { ChangeEvent, MutableRefObject } from 'react';
+import IconifyIcon from 'components/base/IconifyIcon';
 
 interface SearchFilterProps {
   apiRef: MutableRefObject<GridApiCommunity>;

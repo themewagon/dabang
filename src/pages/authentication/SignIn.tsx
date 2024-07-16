@@ -12,11 +12,11 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import IconifyIcon from 'components/base/IconifyIcon';
-import PasswordTextField from 'components/common/PasswordTextField';
-import LogoHeader from 'layouts/main-layout/sidebar/LogoHeader';
 import { SyntheticEvent } from 'react';
 import paths from 'routes/paths';
+import LogoHeader from 'layouts/main-layout/sidebar/LogoHeader';
+import IconifyIcon from 'components/base/IconifyIcon';
+import PasswordTextField from 'components/common/PasswordTextField';
 
 const checkBoxLabel = { inputProps: { 'aria-label': 'Checkbox' } };
 

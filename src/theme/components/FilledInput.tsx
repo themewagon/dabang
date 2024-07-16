@@ -14,12 +14,6 @@ const FilledInput: Components<Omit<Theme, 'components'>>['MuiFilledInput'] = {
       fontSize: theme.typography.fontSize + 4,
       lineHeight: 1.5,
       paddingRight: theme.spacing(3),
-
-      // color: theme.palette.neutral.main,
-      // '&::placeholder': {
-      //   color: theme.palette.neutral.main,
-      //   opacity: 1,
-      // },
     }),
 
     adornedStart: ({ theme }) => ({

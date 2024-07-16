@@ -1,7 +1,7 @@
 import { Box, List, Stack, Toolbar } from '@mui/material';
+import sitemap from 'routes/sitemap';
 import LogoHeader from './LogoHeader';
 import NavCard from './NavCard';
-import sitemap from 'routes/sitemap';
 import NavItem from './NavItem';
 
 const NavItems = () => {

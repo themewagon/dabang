@@ -1,13 +1,7 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 
-// lineHeight: lineHeight/fontSize;
 const typography: TypographyOptions = {
   fontFamily: ['Poppins', 'Open Sans', 'Epilogue', 'sans-serif'].join(','),
-
-  // fontWeightLight: 300,
-  // fontWeightRegular: 400,
-  // fontWeightMedium: 500,
-  // fontWeightBold: 700,
 
   h1: {
     fontWeight: 600,

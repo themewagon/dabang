@@ -1,3 +1,5 @@
+import { SxProps, useTheme } from '@mui/material';
+import { MutableRefObject, useMemo } from 'react';
 import * as echarts from 'echarts/core';
 import {
   TooltipComponent,
@@ -8,12 +10,10 @@ import {
 import { MapChart, MapSeriesOption } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
 import { CallbackDataParams } from 'echarts/types/src/util/types.js';
-import { MutableRefObject, useMemo } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
+import world from 'assets/json/world.json';
 import { SalesMappingDataItem } from 'data/sales-mapping-data';
 import ReactEchart from 'components/base/ReactEhart';
-import world from 'assets/json/world.json';
-import { SxProps, useTheme } from '@mui/material';
 
 echarts.use([TooltipComponent, GeoComponent, MapChart, CanvasRenderer]);
 //@ts-ignore

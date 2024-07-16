@@ -1,9 +1,8 @@
 import { Link, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import IconifyIcon from 'components/base/IconifyIcon';
 import { useState } from 'react';
-
 import { useLocation } from 'react-router-dom';
 import { MenuItem } from 'routes/sitemap';
+import IconifyIcon from 'components/base/IconifyIcon';
 import CollapsedItems from './CollapsedItems';
 
 const NavItem = ({ item }: { item: MenuItem }) => {

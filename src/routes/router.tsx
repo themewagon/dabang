@@ -2,9 +2,6 @@ import { Suspense, lazy } from 'react';
 import { Outlet, createBrowserRouter } from 'react-router-dom';
 import paths, { rootPaths } from './paths';
 
-import PageLoader from 'components/loading/PageLoader';
-import Progress from 'components/loading/Progress';
-
 const App = lazy(() => import('App'));
 const MainLayout = lazy(() => import('layouts/main-layout'));
 const AuthLayout = lazy(() => import('layouts/auth-layout'));
@@ -12,6 +9,9 @@ const Dashboard = lazy(() => import('pages/dashboard/Dashboard'));
 const SignIn = lazy(() => import('pages/authentication/SignIn'));
 const SignUp = lazy(() => import('pages/authentication/SignUp'));
 const Page404 = lazy(() => import('pages/errors/Page404'));
+
+import PageLoader from 'components/loading/PageLoader';
+import Progress from 'components/loading/Progress';
 
 export const routes = [
   {

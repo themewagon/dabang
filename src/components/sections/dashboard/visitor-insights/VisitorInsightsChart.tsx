@@ -1,3 +1,5 @@
+import { useTheme } from '@mui/material';
+import { MutableRefObject, useMemo } from 'react';
 import * as echarts from 'echarts/core';
 import {
   TooltipComponent,
@@ -10,10 +12,8 @@ import {
 import { LineChart, LineSeriesOption } from 'echarts/charts';
 import { UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
-import { MutableRefObject, useMemo } from 'react';
-import ReactEchart from 'components/base/ReactEhart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import { useTheme } from '@mui/material';
+import ReactEchart from 'components/base/ReactEhart';
 
 echarts.use([
   TooltipComponent,
@@ -109,7 +109,6 @@ const VisitorInsightsChart = ({ chartRef, data, style }: VisitorInsightsChartPro
           type: 'line',
           data: data['loyal customers'],
           smooth: true,
-          // smoothMonotone: 'x',
           symbol: 'circle',
           showSymbol: false,
           symbolSize: 14,
@@ -123,7 +122,6 @@ const VisitorInsightsChart = ({ chartRef, data, style }: VisitorInsightsChartPro
           type: 'line',
           data: data['new customers'],
           smooth: true,
-          // smoothMonotone:'x',
           symbol: 'circle',
           showSymbol: false,
           symbolSize: 14,
@@ -136,7 +134,6 @@ const VisitorInsightsChart = ({ chartRef, data, style }: VisitorInsightsChartPro
           type: 'line',
           data: data['unique customers'],
           smooth: true,
-          // smoothMonotone:'x',
           symbol: 'circle',
           showSymbol: false,
           symbolSize: 14,

@@ -1,11 +1,11 @@
 import { Divider, Paper, Stack, Typography } from '@mui/material';
 import { useMemo, useRef, useState } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import CustomerSatisfactionChart from './CustomerSatisfactionChart';
-import Pin from 'components/icons/Pin';
 import { customerSatisfaction } from 'data/customer-satisfaction';
 import { currencyFormat, getTotal } from 'helpers/utils';
+import Pin from 'components/icons/Pin';
 import LegendToggleButton from 'components/common/LegendToggleButton';
+import CustomerSatisfactionChart from './CustomerSatisfactionChart';
 
 const CustomerSatisfaction = () => {
   const chartRef = useRef<EChartsReactCore | null>(null);
